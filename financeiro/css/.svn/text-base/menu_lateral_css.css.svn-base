@@ -1,0 +1,43 @@
+#vertmenu {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 14px; /* define o tamanho da fonte */
+width: 143x; /* define a largura da DIV */
+padding: 0px;
+margin: 0px;
+}
+
+#vertmenu h1 {
+display: block; 
+background-color:#FF9900;
+font-size: 90%; 
+padding: 3px 0 5px 3px;
+border: 1px solid #000000;
+color: #333333;
+margin: 0px;
+width:143px;
+}
+
+#vertmenu ul {
+list-style: none;
+margin: 0px;
+padding: 0px;
+border: none;
+}
+#vertmenu ul li {
+margin: 0px;
+padding: 0px;
+}
+#vertmenu ul li a {
+font-size: 80%;
+display: block;
+border-bottom: 1px dashed #cdcccd; /* define a cor do tracejado que separa */
+padding: 6px 0px 6px 5px; /* define espaçamento superior - esquerda  - inferior e depois direita */
+text-decoration: none;
+color: #727071; /*define a cor da fonte */
+width:143px; /* define a largura total do menu */
+}
+
+#vertmenu ul li a:hover, #vertmenu ul li a:focus {
+color: #ffffff;  /* cor da fonte quando passa o mouse em cima */
+background-color: #afb0b3;  /* funso quando passa o moude em cima */
+}

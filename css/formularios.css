@@ -1,0 +1,8 @@
+.css_form_01 {
+ text-family:Verdana,Tahoma,Helvetica,sans-serif; /*Nome da fonte*/
+ font-size:12px; /*Tamanho da fonte*/
+ color:#990000; /*Cor da fonte*/
+ background:#ffffff; /*Cor de fundo do elemento*/
+ border: 1px solid #05658A ;
+}
+

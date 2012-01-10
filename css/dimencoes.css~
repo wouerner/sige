@@ -1,0 +1,234 @@
+body{
+	background: #159BAD url(../imagens/quadro_negro.jpg) no-repeat center top;
+
+}
+#site{
+
+	width:960px;
+	min-height: 10px;
+	margin: 0.2em auto;
+	font-family: Tahoma, Helvetica, Arial, Sans-Serif;
+	color : #009bd0 ;
+
+}
+
+#cab{
+	background: rgba(255,255,255,0.7);
+	border-radius: 4px 4px 0 0;
+	padding:4px;
+	border: 1px solid white;
+	margin-bottom: 1px;
+	height: 128px;
+
+}
+
+#logo{
+	padding:4px;
+	background:white;
+	width:300px;	
+	border-radius: 4px;
+	float: left;
+
+}
+
+#cab h1{
+	font-weight: 900; 
+	font-size: 40pt;
+	margin: 0;
+	text-shadow: 3px 3px 4px #B5B5B5;
+	letter-spacing: 25px;
+	font-weight: 900 ;
+	text-align: center;
+	line-height: 46px;
+
+
+}
+#cab h2{
+	margin: 0 0 10px 0;
+	font-size:12.5pt;
+	text-align: center;
+	}
+#cab h3{
+	margin: 0;
+	font-size:10.5pt;
+	text-align: center;
+
+	}
+
+#slideshow{
+
+	float:left;
+	width:642px; 
+	height:125px;
+
+}
+
+
+
+#nav {
+
+	width:980px;
+	height:72px;
+	border-radius: 10px;
+	margin-left: -10px;
+	background: rgba(255,255,255, 0.7);
+	border: 1px solid white;
+	margin-bottom: 1px;
+}
+
+#login_aluno{
+	width : 260px;
+	float: left;
+	background: rgba(255,251,0, 0.7);
+	padding:6px;
+	border-radius: 10px 0 0 10px;
+
+}
+#login_aluno fieldset{
+	padding:0;
+	}
+#login_aluno legend{
+	font-size: 10pt;
+}
+
+#login_aluno input.login{
+	color: black;
+	height: 20px;
+	width:120px;
+
+}
+
+#login_aluno input.senha{
+	color: black;
+	height: 20px;
+	width:75px;
+}
+
+#login_aluno input.botao{
+
+}
+#login_aluno a.link_senha{
+	font-size: 8pt;
+	letter-spacing: 2pt;
+
+}
+#login_aluno a.link_senha:hover{
+	background:red;
+}
+
+#menu_site{
+
+	width:690px;
+	float: left;
+}
+#menu_site ul{
+	padding:0;
+
+} 
+
+#menu_site ul li{
+	display:inline;
+	padding: 4px;
+
+
+}
+#menu_site ul li a{
+	font-size: 16pt;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	}
+#menu_site ul li.current a{
+	background: #00EDED;
+
+}
+
+#menu_site ul li a:hover{
+
+	background:white;
+
+}
+
+#conteudo{
+	display:block;
+	width:100%;
+	height: 430px;
+	background: rgba(255,255,255,0.8);
+	padding-top: 6px;
+	border: 1px solid white;
+}
+
+#col_esq{
+	width:25%;
+	float: left;
+	/*background: rgba(255,255,255,0.7);*/
+}
+
+#col_esq h3, #col_dir h3{
+	font-family: Tahoma, Helvetica, Arial, Sans-Serif;
+	text-shadow: 0px 2px 3px #555;
+	color: white;
+	background:  #0B0870; 
+	text-align: center;
+	margin:0;
+
+}
+#col_esq p, #col_dir p{
+	background: #1F96FF;
+	margin-top: 0;
+	color: white;
+	border-radius: 0 0 10px 10px;
+	padding: 5px;
+
+	padding-bottom: 10px;
+
+}
+
+#col_esq h4 , #col_dir h4{
+	margin: 0;
+	background:#0080F0;
+	color: white;
+}
+
+#col_central{
+	width: 45%;
+	float: left;
+/*	background: rgba(255,255,255,0.7);*/
+
+}
+
+#col_central div{
+	width:90%;
+	margin:0 auto;
+}
+
+#col_dir{
+	width:27%;
+	float: left;
+	/*background: rgba(255,255,255,0.7);*/
+	float: right;
+	}
+
+#rodape{
+	background: rgba(255,255,255,0.7);
+	margin-top:1px;
+	clear : both;
+	border: 1px solid white;
+	border-radius: 0 0 4px 4px;
+	padding: 4px;
+	width: 960px;
+
+}
+#rodape img{
+	float: right;
+	margin: 10px;
+
+}
+#rodape p{
+	margin: 0;
+	text-align: center;
+	font-size: small; 
+	display:block;
+	width:80%;
+}

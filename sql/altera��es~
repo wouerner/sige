@@ -1,0 +1,10 @@
+ALTER TABLE `tb_materia` ADD `aproveitamento` BOOLEAN NULL DEFAULT '0' COMMENT 'caso o aluno tenha concluido algumas materias, essas materias serão cadastradas como aproveitamento.' AFTER `tipo_ensino` 
+
+
+ALTER TABLE `tb_agenda_provas_alunos_agendados` DROP `materia02`
+
+ALTER TABLE `tb_agenda_provas_alunos_agendados` CHANGE `materia01` `materia` INT( 11 ) NULL 
+
+ALTER TABLE `tb_agenda_provas_alunos_agendados` CHANGE `data_escolhida` `data_escolhida` INT( 11 ) NULL 
+
+ALTER TABLE `tb_agenda_provas_alunos_agendados` ADD `tipo_ensino` INT( 11 ) NULL AFTER `materia` 

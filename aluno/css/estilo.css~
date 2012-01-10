@@ -1,0 +1,64 @@
+#tudo{
+	margin: 0 auto;
+	max-width:960px;
+	background:#B0CECF;
+	padding: 2px;
+
+}
+#aluno .sair  {
+	float: right;
+}
+#aluno .sair:hover  {
+background: red;
+}
+
+#aluno{
+	background:#C3E5E6;
+	padding: 2px;
+
+}
+
+#nav , #rodape{
+margin: 0 auto;
+width:960px;
+}
+#nav li{
+display: inline;
+margin: 15px;
+}
+
+#nav p{
+text-align:right;
+
+}
+
+#nav a{
+width: 300px;
+font-size: 17pt;
+background: #008080;
+color: black;
+padding: 5px;
+font-family:sans serif;
+border: 2px solid white;
+border-radius: 4px;
+}
+
+#nav a:hover{
+background: #003333;
+color:white;
+padding: 5px;
+font-family:sans serif;
+border: 2px solid white;
+border-radius: 4px;
+box-shadow: 2px  2px 10px black;
+}
+
+#nav p.moodle a:hover{
+	color: black;
+background: yellow;
+}
+#nav .moodle a{
+font-size:40pt;
+letter-spacing: 10pt;
+
+}

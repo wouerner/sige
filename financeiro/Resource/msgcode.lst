@@ -1,0 +1,48 @@
+st_userFuns={};
+st_showRuler=0;
+function sendMessage(msg)
+{
+	location.assign("DMM:"+msg);
+}
+
+function saveUserFun(msgE)
+{
+
+	if(window[msgE]&&typeof(window[msgE])=="function"&&window[msgE].toString()!=sendScrollbarPos.toString())
+	{
+		st_userFuns[msgE]=window[msgE];
+	}
+}
+
+function restoreUserFun(msgE)
+{
+	if(st_userFuns[msgE]&&typeof(st_userFuns[msgE])=="function")
+	{
+		window[msgE]=st_userFuns[msgE];
+		st_userFuns[msgE]=null;
+	}
+}
+function execUserFun(msgE)
+{
+	if(st_userFuns[msgE]&&typeof(st_userFuns[msgE])=="function")
+		st_userFuns[msgE]();	
+}
+
+function sendScrollbarPos()
+{
+	var en=event.type,x=getClientLeft(),y=getClientTop();
+	execUserFun("on"+en);
+	sendMessage(x+","+y);
+}
+
+function getClientLeft()
+{
+	return (document.compatMode=="CSS1Compat"?document.documentElement:document.body).scrollLeft;
+
+}
+
+function getClientTop()
+{
+	return (document.compatMode=="CSS1Compat"?document.documentElement:document.body).scrollTop;
+}
+

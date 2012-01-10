@@ -1,0 +1,39 @@
+.css_form_01 {
+ text-family:Verdana,Tahoma,Helvetica,sans-serif; /*Nome da fonte*/
+ font-size:12px; /*Tamanho da fonte*/
+ color:#990000; /*Cor da fonte*/
+ background:#ffffff; /*Cor de fundo do elemento*/
+ border: 1px solid #6699FF;
+
+ 
+}
+
+
+.css_form_02 {
+ text-family:Verdana,Tahoma,Helvetica,sans-serif; /*Nome da fonte*/
+ font-size:12px; /*Tamanho da fonte*/
+ color:#990000; /*Cor da fonte*/
+ background:#ffffff; /*Cor de fundo do elemento*/
+ border: 1px solid #6699FF;
+ margin:3px;
+ 
+}
+
+.em_cima {
+ color:#990000; /*Cor da fonte*/
+ background:#E1DFFF; /*Cor de fundo do elemento*/
+ border: 3px solid #6699FF;
+ margin:3px;
+ 
+}
+
+
+
+
+
+.ativo {
+background: #ccc;
+}
+.desativo {
+background: #fff;
+}

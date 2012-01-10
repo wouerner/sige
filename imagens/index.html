@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Supletivo R&aacute;pido</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<SCRIPT LANGUAGE="JavaScript">
+
+var limit="00:10"
+if (document.images){
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+}
+function Redireciona(){
+if (!document.images)
+return
+if (parselimit==1)
+window.parent.location="http://www.cursomaispratico.com.br"
+else{ 
+parselimit-=1
+curmin=Math.floor(parselimit/60)
+cursec=parselimit%60
+if (curmin!=0)
+curtime=curmin+" : "+cursec+" segundos para o redirecionamento"
+else
+curtime=cursec+" segundos para o redirecionamentor"
+window.status=curtime
+setTimeout("Redireciona()",500)
+}
+}
+
+</script>
+<link href="http://www.cursomaispratico.com.br/novo_css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style3 {font-size: 14px}
+.style4 {color: #024d91; font-weight: bolder; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.style5 {color: #42688A; font-weight: bolder; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.style7 {font-size: 20px}
+-->
+</style>
+</head>
+
+<body OnLoad="Redireciona()" bgcolor="#FFFFFF" text="#000000">
+<table width="50%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr> 
+<td height="128"> 
+<div align="center">
+  <p><img src="logo_marca_mais_pratico.jpg" width="325" height="117"><br>
+    <span class="roda_pe style7">Supletivo Ensino M&eacute;dio, Fundamental e Cursos T&eacute;cnicos.</span></p>
+  <p class="style3"><span class="style4"><br>
+      </span><span class="style5">Entre no mercado de trabalho ou em uma faculdade com nossos cursos.</span></p>
+  <p class="sub_titulo_01 style3">Aproveite esta oportunidade para terminar seus estudos. <br>
+    Fa&ccedil;a um de nossos cursos e entre para a disputa no mercado de trabalho.</p>
+  <p>&nbsp;</p>
+  <p class="sub_titulo_01">Obrigado por sua visita!<br>
+Voc&ecirc; ser&aacute; redirecionado em  3 segundos.</p>
+  <p>&nbsp;</p>
+</div>
+</td>
+</tr>
+<tr> 
+<td height="51">&nbsp;</td>
+</tr>
+</table>
+</body>
+</html>

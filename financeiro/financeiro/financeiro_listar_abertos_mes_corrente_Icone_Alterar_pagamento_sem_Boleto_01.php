@@ -1,0 +1,1 @@
+<a href="financeiro_editar_dados_boleto_pagamento.php?cod_boleto=<? echo "$cod_boleto" ?>&amp;id_aluno=<? echo "$x[id_aluno]" ?>&amp;id_cob=<? echo "$x[id_cob]" ?>" target="_parent"><img src="../imagens/ico_editar.gif" alt="Editar Pagamento" title="Editar Pagamento" width="20" height="19" border="0" /></a>

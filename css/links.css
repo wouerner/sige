@@ -1,0 +1,91 @@
+/* PARA O LINK 1 */
+
+a.link_001:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#666666;
+
+	text-decoration:underline;
+}
+
+a.link_001:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#666666;
+
+	text-decoration:underline;
+}
+
+a.link_001:hover {
+	background-color:#dddddd;
+	text-decoration:none;
+}
+
+a.link_001:active {
+background-color:#fca1a1;
+}
+
+/* PARA O LINK 2 */
+a.link_002:link {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+color:#719D24;
+
+}
+a.link_002:visited {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+color:#719D24;
+}
+a.link_002:hover {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+color:#CC6600;
+text-decoration:underline;
+background-color:#E2F2C8;
+}
+a.link_002:active {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+color:#719D24;
+text-decoration:none;
+
+}
+
+/* PARA O LINK 3 */
+a.link_003:link {
+color:#FFCC00;
+}
+a.link_003:visited {
+color:#669900;
+}
+a.link_003:hover {
+color:#0000FF;
+text-decoration:underline overline;
+}
+a.link_003:active {
+color:#FFFFFF;
+text-decoration:none;
+background-color:#000000;
+}
+
+
+a.link_004:link {
+color:#00FF00;
+background-color:#000000;
+text-decoration:none;
+}
+a.link_004:visited {
+color:#000000;
+text-decoration:line-through;
+}
+a.link_004:hover {
+color:#000000;
+background-color:#FF0000;
+text-decoration:none;
+}
+a.link_004:active {
+color:#FFFF00;
+text-decoration:none;
+background-color:#000000;
+}

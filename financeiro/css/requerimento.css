@@ -1,0 +1,38 @@
+#todo{
+
+	width: 970px;
+	margin: 0 auto;
+
+}
+
+table {
+
+	border: 1px solid black;
+	width: 100%;
+	margin-bottom: 50px;
+	border-collapse:collapse;
+	padding: 4px;
+	font-size: 13pt;
+	font-family: arial
+
+}
+
+td{
+
+	border : 1px solid black;
+	padding: 4px;
+
+}
+
+.vertical{
+	width: 10%;
+
+}
+
+.nome{
+
+	font-size: 17pt;
+	margin: 0;
+	float: left;
+
+}

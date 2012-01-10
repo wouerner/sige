@@ -1,0 +1,137 @@
+body {
+
+	background:#E5FFFD; 
+
+}
+
+h1,h2{
+	text-align: center;
+}
+
+
+div#tudo {	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	width: 960px;
+	margin : 0 auto;
+	background: white;
+	padding : 10px ;
+}
+
+ul {
+	padding: 10px;
+
+}
+
+ul li{
+	display: inline;
+	margin: 3px;
+
+
+}
+
+
+.sairLogin{
+
+	color : black;
+	background : white;
+	font-weight:bolder;
+	font-style:normal;
+	padding: 6px;
+
+
+}
+
+.sairLogin:hover{
+
+	color : yellow;
+	background : red;
+	font-weight:bolder;
+	font-style:normal;
+
+
+}
+#dadosDoAluno{
+
+	margin : 10px;
+
+}
+
+#dadosDoAluno table {
+	width : 100%;
+}
+#dadosDoAluno td{
+	color	: #00005E;
+	background: white; 
+	border-radius: 0;
+	border-collapse: collapse;
+
+
+}
+
+
+#avisos 
+{
+	float: left;
+	padding: 3px;
+	width : 300px;
+
+}
+
+#agendamento {
+	margin 	: 0 auto;
+	display: block;
+	height : 120px;
+	border : 3px solid #00005E;
+	border-radius: 10px;
+	padding : 3px;
+}
+#agendamento table {
+	float : left;
+
+}
+
+#agendamento th, td ,caption{
+
+	color	: #00005E;
+	padding: 3px;
+	border-collapse:collapse ; 
+	border-radius: 3px;
+	background: #A6E8D8; 
+	
+
+}
+
+#linkAgendamento {
+	float : right;
+	font-size: 20pt;
+	color : #92E8A3 ;
+	background-color: #53845D ; 
+	margin-left: 0px;
+	border-radius: 10px;
+	text-align:center ;
+	text-decoration:none;
+	height : 100%;
+	padding-left: 4px;
+	padding-right: 10px;
+
+	
+
+
+
+}
+#linkAgendamento:hover {
+	color : #9BF6AD;
+}
+
+#linkAgendamento .desativado {
+	
+
+}
+
+#rodape {
+
+	clear : both;
+
+}

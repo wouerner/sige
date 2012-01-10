@@ -1,0 +1,218 @@
+body {
+
+	background:#E5FFFD; 
+
+}
+
+h1{ 
+
+	text-align: center;
+	font-size: 22px;
+}
+
+h2{
+	text-align: center;
+	font-size: 18px;
+	color : black;
+
+}
+
+h3{
+	font-size: 20px;
+	margin : 0px;
+	margin : 1px;
+
+}
+
+
+div#tudo {
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bold;
+	width: 960px;
+	margin : 0 auto;
+	background: white;
+	padding : 10px ;
+/*	height : 427px;*/
+	display : block;
+}
+
+
+#cab{
+
+
+	background : url('../imagens/logo.png') left top no-repeat;
+height : 63px;
+padding-left : 400px;
+
+}
+
+ul {
+	padding: 10px;
+
+}
+
+ul li{
+	display: inline;
+	margin: 3px;
+
+
+}
+
+
+.sairLogin{
+
+	color : black;
+	background : white;
+	font-weight:bolder;
+	font-style:normal;
+	padding: 6px;
+
+
+}
+
+.sairLogin:hover{
+
+	color : yellow;
+	background : red;
+	font-weight:bolder;
+	font-style:normal;
+
+
+}
+#dadosDoAluno{
+
+	margin : 10px;
+	float : left;
+	width : 400px;
+	display : block ;
+
+}
+
+#dadosDoAluno caption{
+	text-align: left;
+	background: white;
+	color	: #00005E;
+
+
+}
+
+
+#dadosDoAluno table {
+	width : 100%;
+}
+#dadosDoAluno td{
+	background: white; 
+	border-radius: 0;
+	border-collapse: collapse;
+	color: black;
+
+
+}
+
+#atividade{
+	width :400px;
+	float : left;
+	display : block;
+
+}
+
+#docs td.falta {
+	background : red;
+}
+
+
+#dados tr td{
+	background: white;
+	text-align: center;
+
+}
+#menuAluno{
+	width : 323px;
+	float : left;
+	padding-left: 100px;
+
+}
+
+#avisos 
+{
+	float: left;
+	padding: 3px;
+	width : 300px;
+
+}
+
+
+#agendamento {
+	margin 	: 0 auto;
+	display: block;
+	height : 190px;
+	border-radius: 10px;
+	padding : 3px;
+}
+#agendamento table {
+	float : left;
+
+}
+
+#agendamento th, td ,caption{
+
+	color	: #00005E;
+	padding: 3px;
+	border-collapse:collapse ; 
+	border-radius: 3px;
+	background: #A6E8D8; 
+	
+
+}
+
+#linkAgendamento {
+	float : right;
+	font-size: 12pt;
+	color : #92E8A3 ;
+	background-color: #53845D ; 
+	margin-left: 0px;
+	border-radius: 10px;
+	text-align:center ;
+	text-decoration:none;
+	padding-left: 4px;
+	padding-right: 10px;
+
+	
+
+
+
+}
+#linkAgendamento:hover {
+	color : #9BF6AD;
+}
+
+#linkAgendamento .desativado {
+	
+
+}
+
+#aviso{
+clear:both;	
+border : 1px solid red;
+width: 400px;
+font-size : 8pt;
+
+}
+#aviso table,td{
+	background: white;
+
+}
+
+#alunoInfo{
+	width: 418px;
+	float : left;
+
+}
+
+#rodape {
+
+	clear : both;
+
+}

@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY style="font-size:10pt;border-style:none;background-color:buttonface;overflow:hidden;">
+<div id="dv_fltC" style="position:absolute;top:0px;left:0px;width:80px;visibility:visible;overflow:hidden;">
+<table bgcolor="#CADAED" style="border:1px solid #999999;font:9pt Arial;color:#999999;" width=80 height=26>
+<tr><td align="center">Menu&nbsp;Item</td></tr>
+<tr><td align="center">Menu&nbsp;Item</td></tr>
+<tr><td align="center">Menu&nbsp;Item</td></tr>
+<tr><td align="center">Menu&nbsp;Item</td></tr>
+</table>
+</div>
+<div style="position:absolute;top:0px;left:0px;color:red;" id="logdv"></div>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+/*=======Ver: 7.0.60901========*/
+if(!Array.prototype.push)Array.prototype.push=function(){var l=this.length;for(var i=0;i<arguments.length;i++)this[l++]=arguments[i];};
+if(!Array.prototype.pop)Array.prototype.pop=function(){if(this.length){var o=this[this.length-1];this.length--;return o}};
+onerror=function(){return true}
+document.oncontextmenu=function(){return false;}
+filterContainer=document.all("dv_fltC");
+filterDelay=500;
+filterShow="";
+filterHide="";
+filterShadow="";
+runFilter=-1;
+runTid=0;
+v1=v2=-1;
+ver=/(MSIE) ([\d\.]+)/.exec(navigator.userAgent)[2];
+
+//0:show 1:hide 2:shadow
+function setFilter(flt,i,sp,f)
+{
+	clearTimeout(runTid);
+	_M(M_effectStop());
+	if(f!=2)filterDelay=(110-sp)/100*1000;
+	if(ver<5.5)
+	{
+		if(i<24&&i>=0)
+			flt="revealTrans(Transition="+i+",Duration="+((110-sp)/100)+")";
+		else if(!/^stEffect/.test(flt))
+			flt="";
+	}
+	switch(f)
+	{
+		case 0:
+			filterShow=flt;
+			break;
+		case 1:
+			filterHide=flt;
+			break;
+		case 2:filterShadow=flt;break;
+	}
+	if(filterContainer.stEff&&filterContainer.stEff.length)
+	{
+		for(var j=filterContainer.stEff.length-1;j>=0;j--)
+				filterContainer.stEff[j].remove();
+	}
+	if(/^stEffect\(([a-zA-Z0-9,"']+)\)/.exec(filterShow))
+	{
+		var t=RegExp.$1.split(",");
+		if(t[0]=="\"slip\"")
+			SothinkEffect.Slip(filterContainer,0,0,filterDelay,0,parseInt(t[2]));
+	}
+	if(/^stEffect\(([a-zA-Z0-9,"']+)\)/.exec(filterHide))
+	{
+		var t=RegExp.$1.split(",");
+		if(t[0]=="\"slip\"")
+			SothinkEffect.Slip(filterContainer,0,0,filterDelay,1,parseInt(t[2]));	
+	}
+	filterContainer.style.filter=(filterShow&&!/^stEffect/.test(filterShow)?filterShow+" ":"")+(filterHide&&!/^stEffect/.test(filterHide)?filterHide+" ":"")+filterShadow;
+	return true;
+}
+
+//0:show 1:hide 2:show&hide
+function execEffect(f)
+{		
+	_M(M_effectStop());
+	switch(f)
+	{
+		case 0:
+			if(filterContainer.style.visibility=="visible")
+				filterContainer.style.visibility="hidden";
+			runTid=setTimeout("showEffect()",500);
+			break;
+		case 1:
+			runTid=setTimeout("if(filterContainer.style.visibility==\"hidden\")filterContainer.style.visibility=\"visible\";hideEffect();runTid=setTimeout(\"filterContainer.style.visibility='visible'\",filterDelay+500);",500);
+			break;
+		case 2:
+			hideEffect();
+			runTid=setTimeout("showEffect()",filterDelay+1000);
+			break;
+	}
+}
+
+function showEffect()
+{
+	_M(
+	M_effectApply(0),
+	"filterContainer.style.visibility=\"visible\";",
+	M_effectPlay(0)
+	);
+}
+
+function hideEffect()
+{
+	_M(
+	M_effectApply(1),
+	"filterContainer.style.visibility=\"hidden\";",
+	M_effectPlay(1)
+	);
+}
+
+_M=function()
+{
+	var s="",i;
+	for(i=0;i<arguments.length;i++)
+		s+=arguments[i];
+		if(s)eval(s);
+}
+
+function M_effectApply(isHide)
+{
+	var s="";
+	if(isHide)
+	{
+		if(/stEffect/.test(filterHide))
+			s="filterContainer.stEff["+(/stEffect/.test(filterShow)?1:0)+"].apply();runFilter="+(/stEffect/.test(filterShow)?4:3)+";if(0){";
+		else if(filterHide)
+			s="filterContainer.filters["+(filterShow&&!/stEffect/.test(filterShow)?1:0)+"].apply();runFilter="+(filterShow&&!/stEffect/.test(filterShow)?1:0)+";";
+	}
+	else
+	{
+		if(/stEffect/.test(filterShow))
+			s="filterContainer.stEff[0].apply();runFilter=3;if(0){";
+		else if(filterShow)
+			s="filterContainer.filters[0].apply();runFilter=0;";
+	}
+	return s;
+}
+
+function M_effectPlay(isHide)
+{
+	var s="";
+	if(isHide)
+	{
+		if(/stEffect/.test(filterHide))
+			s="};filterContainer.stEff["+(/stEffect/.test(filterShow)?1:0)+"].play();";
+		else if(filterHide)
+			s="filterContainer.filters["+(filterShow&&!/stEffect/.test(filterShow)?1:0)+"].play();";
+	}
+	else
+	{
+		if(/stEffect/.test(filterShow))
+			s="};filterContainer.stEff[0].play();";
+		else if(filterShow)
+			s="filterContainer.filters[0].play();";
+	}
+	return s;
+}
+
+function M_effectStop()
+{
+	var s="";
+	switch(runFilter)
+	{
+		case 0:
+			s="if(filterContainer.filters[0].status)filterContainer.filters[0].stop();";
+			break;
+		case 1:
+			s="if(filterContainer.filters[1].status)filterContainer.filters[1].stop();";
+			break;
+		case 3:
+			s="if(filterContainer.stEff[0].status)filterContainer.stEff[0].stop();";
+			break;
+		case 4:
+			s="if(filterContainer.stEff[1].status)filterContainer.stEff[1].stop();";
+			break;
+	}
+	s+="runFilter=-1;";
+	return s;
+}
+
+SothinkEffect={};
+//mode:bit 0:show | hide;bit 1: even | accelerated;
+SothinkEffect.Slip=function(domObject,x,y,time,mode,direction)
+{
+	var o={
+		status:0,
+		tid:0,
+		obj:domObject,
+		pos:[x,y],
+		time:time,
+		dir:direction,
+		mode:mode,
+		da:0,
+		ds:0,
+		hz:20
+	};
+	if(domObject.stEff==null)
+	{
+		domObject.stEff=[];
+		domObject.stEff[0]=o;
+		o.fid=0;
+	}
+	else
+	{
+		o.fid=domObject.stEff.length;
+		domObject.stEff.push(o);
+	}
+	o.apply=function()
+	{	
+		var cs=this.obj.style.clip;
+		this.width=this.obj.offsetWidth;
+		this.height=this.obj.offsetHeight;
+		this.times=this.time*this.hz/1000;
+		if(!cs||cs=="rect(auto auto auto auto)")
+			cs="rect(0,"+this.width+","+this.height+",0)";
+		if(this.mode&2)
+			if(this.dir==1||this.dir==2)
+				this.da=this.width/(this.times*this.times);
+			else
+				this.da=this.height/(this.times*this.times);
+		else
+			if(this.dir==1||this.dir==2)
+				this.ds=this.width/this.times;
+			else 
+				this.ds=this.height/this.times;
+		this.status=1;
+	};
+	o.play=function(i)
+	{
+		var w=h=0;
+		if(i==null)i=0;
+		if(i<this.times)
+		{
+			if(this.mode&1)
+			{
+				switch(this.dir)
+				{
+					case 1:
+						w=this.getS(i);
+						with(this.obj.style)
+						{
+							left=this.pos[0]+w+"px";
+							top=this.pos[1]+"px";
+							clip="rect(0,"+(this.width-w)+","+this.height+",0)";
+						}
+						break;
+					case 2:
+						w=this.getS(i);
+						with(this.obj.style)
+						{
+							left=this.pos[0]-w+"px";
+							top=this.pos[1]+"px";
+							clip="rect(0,"+this.width+","+this.height+","+w+")";
+						}
+						break;
+					case 3:
+						h=this.getS(i);
+						with(this.obj.style)
+						{
+							left=this.pos[0]+"px";
+							top=this.pos[1]+h+"px";
+							clip="rect(0,"+this.width+","+(this.height-h)+",0)";
+						}
+						break;
+					case 4:
+						h=this.getS(i);
+						with(this.obj.style)
+						{
+							left=this.pos[0]+"px";
+							top=this.pos[1]-h+"px";
+							clip="rect("+h+","+this.width+","+this.height+",0)";
+						}
+						break;
+				}
+			}
+			else
+			{
+				this.obj.style.visibility="visible";
+				switch(this.dir)
+				{
+					case 1:
+						w=this.getS(i);
+						with(this.obj.style)
+						{
+							left=this.pos[0]+this.width-w+"px";
+							top=this.pos[1]+"px";
+							clip="rect(0,"+w+","+this.height+",0)";
+						}
+						break;
+					case 2:
+						w=this.width-this.getS(i);
+						with(this.obj.style)
+						{
+							left=this.pos[0]-w+"px";
+							top=this.pos[1]+"px";
+							clip="rect(0,"+this.width+","+this.height+","+w+")";
+						}
+						break;
+					case 3:
+						h=this.getS(i);
+						with(this.obj.style)
+						{
+							left=this.pos[0]+"px";
+							top=this.pos[1]+this.height-h+"px";
+							clip="rect(0,"+this.width+","+h+",0)";
+						}
+						break;
+					case 4:
+						h=this.height-this.getS(i);
+						with(this.obj.style)
+						{
+							left=this.pos[0]+"px";
+							top=this.pos[1]-h+"px";
+							clip="rect("+h+","+this.width+","+this.height+",0)";
+						}
+						break;
+				}
+			}
+		}
+		else
+		{		
+			if(this.mode&1)
+				this.obj.style.visibility="hidden";
+			this.obj.style.left=this.pos[0]+"px";
+			this.obj.style.top=this.pos[1]+"px";
+			this.obj.style.clip="rect(auto auto auto auto)";
+			this.status=0;	
+			return;
+		}
+		i++;
+		this.tid=setTimeout("document.all."+this.obj.id+".stEff["+this.fid+"].play("+i+")",1000/this.hz);
+		this.status=2;
+	};
+	o.stop=function()
+	{
+		if(this.status)
+		{
+			clearTimeout(this.tid);
+			this.obj.style.left=this.pos[0]+"px";
+			this.obj.style.top=this.pos[1]+"px";
+			this.obj.style.clip="rect(auto auto auto auto)";
+			if(this.mode&1)
+				this.obj.style.visibility="hidden";
+			else
+				this.obj.style.visibility="visible";
+			this.status=0;			
+		}
+	};
+	o.remove=function()
+	{
+		for(var i=this.fid;i<(this.obj.stEff.length-1);i++)
+		{
+			this.obj.stEff[i+1].fid=i;
+			this.obj.stEff[i]=this.obj.stEff[i+1];
+		}
+		this.obj.stEff.length--;
+		this.obj=null;
+	};
+	o.getS=function(i)
+	{
+		if(this.mode&2)
+			return parseInt(this.da*i*i);
+		else
+			return parseInt(this.ds*i);
+	};
+	o.parseClip=function(s)
+	{
+		var t=s.split(" "); 
+		t[0]=parseInt(t[0].substr(5));
+		for(var j=1;j<t.length;j++)
+			t[j]=parseInt(t[j]);
+		return t;
+	}
+}
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>
