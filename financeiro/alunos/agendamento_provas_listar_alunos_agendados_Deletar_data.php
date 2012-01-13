@@ -1,7 +1,7 @@
 <?php 
 
 //include "validacao_pagina_aluno.php"; 
-include "conexao_bd.php";
+include "../includes/conexao_bd.php";
 
 
 $id = $_GET['id'];

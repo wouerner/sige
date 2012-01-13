@@ -6,8 +6,8 @@ header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-ch
 header('Pragma: no-cache');
 header('Expires: 0');
 
-include '../includes/validacao_pagina_adm.php'; 
-include '../includes/conexao_bd.php';
+include '../includes/../includes/validacao_pagina_adm.php'; 
+include '../includes/../includes/conexao_bd.php';
 ?>
 
 <html>
@@ -69,7 +69,7 @@ window.onerror=function(m,u,l)
 		<?php
 						if ($nivel == 'adm')
 				{
-				include "../includes/menu_lateral.php";
+				include "../includes/../includes/menu_lateral.php";
 				
 				
 				}

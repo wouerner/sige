@@ -1,7 +1,7 @@
 <?php
 //validação e conexão com bando de dados
-include "validacao_pagina_adm.php";
-include "conexao_bd.php";
+include "../includes/validacao_pagina_adm.php";
+include "../includes/conexao_bd.php";
 //$id_aluno   = $_GET['id_aluno'];
 
 

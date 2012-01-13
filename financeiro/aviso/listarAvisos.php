@@ -22,7 +22,15 @@ $resposta = $stm->fetchAll();
 <body>
 <div class = "container">
 
+	<?php include '../includes/cabecalho.inc.php' ; ?>
+
 <div class = "row">
+
+<div class = "span3" >
+	<?php include '../includes/menu_lateral.php' ; ?>
+</div>
+
+<div class = "span13" >
 <table>
 	<caption>Lista de Avisos</caption>
 	<thead>

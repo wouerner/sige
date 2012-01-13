@@ -3,8 +3,8 @@
 session_start( );
 $sessao = session_id();
 //fim do sessão id
-//include "validacao_pagina_adm.php";
-include "conexao_bd.php";
+//include "../includes/validacao_pagina_adm.php";
+include "../includes/conexao_bd.php";
 
 
 $id_aluno   = $_POST['id_aluno'];

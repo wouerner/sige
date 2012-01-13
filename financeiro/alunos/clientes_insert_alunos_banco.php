@@ -4,8 +4,8 @@ session_start( );
 $sessao = session_id();
 //fim do sessão id
 
-include "validacao_pagina_adm.php";
-include "conexao_bd.php";
+include "../includes/validacao_pagina_adm.php";
+include "../includes/conexao_bd.php";
 
 
 //inicio de numeros ramdomicos
@@ -255,7 +255,7 @@ window.onerror=function(m,u,l)
 				
 				
 				
-				include "menu_lateral.php";
+				include "../includes/menu_lateral.php";
 				
 				
 				}

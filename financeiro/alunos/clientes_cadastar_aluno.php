@@ -5,7 +5,7 @@ header('Last Modified: '. gmdate('D, d M Y H:i:s') .' GMT');
 header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
 header('Pragma: no-cache');
 header('Expires: 0');
-include "../validacao_pagina_adm.php";
+include "../includes/validacao_pagina_adm.php";
 ?>
 
 <html>
@@ -62,7 +62,7 @@ window.onerror=function(m,u,l)
 		<?php
 						if ($nivel == 'adm')
 				{
-				include "../includes/menu_lateral.php";
+				include "../includes/../includes/menu_lateral.php";
 				
 				} else	{
 				//direciona para a página inicial dos usuários cadastrados

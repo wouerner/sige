@@ -12,10 +12,17 @@ $id_aluno = $_GET['id_aluno'];
 
 
 <html>
-<head></head>
+<head>
+	<?php include '../includes/css.inc.php' ; ?>
+</head>
 
 <body>
+<div class = "container" >
+	<div class = "span3" >
+		<?php include '../includes/menu_lateral.php' ; ?>
+	</div>
 
+	<div class = "span13">
 <p>Quer deletar a materia <?php echo $nome_materia; ?> do ensino: <?php echo $tipo_ensino; ?></p>
 
 <form action= "materia_deletar.php" method="post">
@@ -24,6 +31,9 @@ $id_aluno = $_GET['id_aluno'];
 	<input type="submit" value="deletar"/>
 
 </form>
+
+</div>
+</div>
 
 </body>
 </html>

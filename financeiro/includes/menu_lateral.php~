@@ -14,7 +14,7 @@
 	        <li><a href="../financeiro/pagina_principal.php" target="_self" tabindex="1"> <strong>     IN&Iacute;CIO<br> </strong></a></li>
 
         	<li><a href="../financeiro/financeiro_lista_boletos_gaveta_todos_aluno.php" target="_self" tabindex="1"> Listar Boletos Gaveta  </a></li>
-	        <li><a href="..financeiro/relatorios_indice.php" target="_self" tabindex="1"> Relat&oacute;rios Financeiros </a></li>
+	        <li><a href="../financeiro/relatorios_indice.php" target="_self" tabindex="1"> Relat&oacute;rios Financeiros </a></li>
 		<li><a href="../financeiro/financeiro_boletos_localizar_nosso_numero.php" target="_self" tabindex="1"> Localizar Boleto por N&ordm; </a></li>
 		</ul>
 </ul>

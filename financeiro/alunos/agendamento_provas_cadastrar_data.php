@@ -1,6 +1,6 @@
 <?php
-include "validacao_pagina_adm.php";
-include "conexao_bd.php";
+include "../includes/validacao_pagina_adm.php";
+include "../includes/conexao_bd.php";
 ?>
 
 <html>
@@ -151,13 +151,13 @@ function MM_swapImage() { //v3.0
 </script>
 
 
-	<?php include 'includes/css.inc.php' ; ?>
+	<?php include '../includes/css.inc.php' ; ?>
 </head>
 
 <body>
 <div class = "container" >
 
-<?php include 'includes/cabecalho.inc.php' ; ?>
+<?php include '../includes/cabecalho.inc.php' ; ?>
 <div class = "row">
 <div class = "span3">
 		
@@ -169,7 +169,7 @@ function MM_swapImage() { //v3.0
 				
 				
 				
-				include "menu_lateral.php";
+				include "../includes/menu_lateral.php";
 				
 				
 				}

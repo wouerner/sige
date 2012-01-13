@@ -5,7 +5,7 @@
 	        <li><a href="../alunos/clientes_cadastar_aluno.php" target="_self" tabindex="1">Cadastrar Alunos </a></li>
         	<li><a href="../alunos/clientes_listar_gaveta.php" target="_self" tabindex="1"> Listar Alunos Gaveta </a></li>
 		<li><a href="../aviso/listarAvisos.php" target="_self" tabindex="1">Avisos</a></li>
-		<li><a href="../alunos/relatorio_alunos_agendados.php" target="_self" tabindex="1"> Relatorio alunos agendados </a></li>
+		<li><a href="../alunos/relatorio_alunos_agendados.php" target="_blank" tabindex="1"> Relatorio alunos agendados </a></li>
 		<li><a href="../agendamento/agendamento_provas_cadastrar_data.php" target="_self" tabindex="1"> Agendamento de Provas </a></li>
 		<li><a href="../alunos/agendamento_provas_listar_alunos_agendados.php" target="_self" tabindex="1"> Alunos Agendados </a></li>
 		</ul>

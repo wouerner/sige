@@ -1,6 +1,6 @@
 <?php
-include '../validacao_pagina_adm.php';  	
-include('../conexao_bd.php');
+include '../includes/validacao_pagina_adm.php';  	
+include('../includes/conexao_bd.php');
 ?>
 
 <html>
@@ -60,7 +60,7 @@ window.onerror=function(m,u,l)
 		<?php
 			if ($nivel == 'adm')
 				{
-				include "../includes/menu_lateral.php";
+				include "../includes/../includes/menu_lateral.php";
 				
 				}
 				else

@@ -1,7 +1,7 @@
 <?php
 
-include "../includes/validacao_pagina_adm.php";
-include "../includes/conexao_bd.php";
+include "../includes/../includes/validacao_pagina_adm.php";
+include "../includes/../includes/conexao_bd.php";
 
 $query = "SELECT  a.nome_completo AS nome_aluno , m.nome AS materia , tp_en.nome AS curso, dt.data_disponivel
 FROM 

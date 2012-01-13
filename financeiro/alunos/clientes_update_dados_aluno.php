@@ -5,7 +5,7 @@ header('Last Modified: '. gmdate('D, d M Y H:i:s') .' GMT');
 header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
 header('Pragma: no-cache');
 header('Expires: 0');
-include "validacao_pagina_adm.php";
+include "../includes/validacao_pagina_adm.php";
 ?>
 
 <html><!-- InstanceBegin template="/Templates/pagina_principal_do_sistema.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -92,7 +92,7 @@ window.onerror=function(m,u,l)
 				
 				
 				
-				include "menu_lateral.php";
+				include "../includes/menu_lateral.php";
 				
 				
 				}
@@ -111,8 +111,8 @@ window.onerror=function(m,u,l)
 		
 		?> </td>
         <td width="839" align="center" valign="top"><!-- InstanceBeginEditable name="corpo_programacao_sistema" --><?php
-include "validacao_pagina_adm.php"; 
-include "conexao_bd.php";
+include "../includes/validacao_pagina_adm.php"; 
+include "../includes/conexao_bd.php";
 
 $id_aluno = $_POST['id_aluno'];
 $nome_completo = $_POST['nome_completo'];

@@ -1,7 +1,7 @@
 <?php
 
-include "../includes/validacao_pagina_adm.php";  	
-include "../includes/conexao_bd.php";
+include "../includes/../includes/validacao_pagina_adm.php";  	
+include "../includes/../includes/conexao_bd.php";
 
 $id_aluno = $_GET['id_aluno'];
 
@@ -80,7 +80,7 @@ $nome_completo = mysql_fetch_assoc($nome_completo);
 	<?php include '../includes/cabecalho.inc.php' ; ?>
 <div class = "row" >
 	<div class = "span3">
-	<?php include '../includes/menu_lateral.php' ; ?>
+	<?php include '../includes/../includes/menu_lateral.php' ; ?>
 	</div>
 	<div class = "span13">
 <h3>Aluno : 

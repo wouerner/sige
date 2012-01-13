@@ -5,8 +5,8 @@ header('Last Modified: '. gmdate('D, d M Y H:i:s') .' GMT');
 header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
 header('Pragma: no-cache');
 header('Expires: 0');
-include "../includes/validacao_pagina_adm.php";  	
-include "../includes/conexao_bd.php";
+include "../includes/../includes/validacao_pagina_adm.php";  	
+include "../includes/../includes/conexao_bd.php";
 
 // numeros de registro por pagina
 $registros = isset($_GET["registros"]) ? $_GET['registros']: 10 ;
@@ -108,7 +108,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 						if ($nivel == 'adm')
 				{
 				
-				include "../includes/menu_lateral.php";
+				include "../includes/../includes/menu_lateral.php";
 				
 				}
 				else

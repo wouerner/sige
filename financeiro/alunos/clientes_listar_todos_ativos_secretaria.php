@@ -5,8 +5,8 @@ header('Last Modified: '. gmdate('D, d M Y H:i:s') .' GMT');
 header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
 header('Pragma: no-cache');
 header('Expires: 0');
-include "validacao_pagina_adm.php";  	
-include "conexao_bd.php";
+include "../includes/validacao_pagina_adm.php";  	
+include "../includes/conexao_bd.php";
 ?>
 
 <html><!-- InstanceBegin template="/Templates/pagina_principal_do_sistema.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -104,7 +104,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 				
 				
 				
-				include "menu_lateral.php";
+				include "../includes/menu_lateral.php";
 				
 				
 				}

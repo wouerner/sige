@@ -1,7 +1,4 @@
 <?php
-
-echo "oi";
-
 include "../includes/validacao_pagina_adm.php";
 include "../includes/conexao_bd.php";
 ?>
@@ -167,7 +164,7 @@ function MM_swapImage() { //v3.0
 		<?php
 						if ($nivel == 'adm')
 				{
-				include "../menu_lateral.php";
+				include "../includes/menu_lateral.php";
 				
 				}
 				else

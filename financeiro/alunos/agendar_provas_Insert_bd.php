@@ -1,6 +1,6 @@
 <?php
-include "validacao_pagina_adm.php";
-include "conexao_bd.php";
+include "../includes/validacao_pagina_adm.php";
+include "../includes/conexao_bd.php";
 ?>
 
 
@@ -207,7 +207,7 @@ function MM_swapImage() { //v3.0
 				
 				
 				
-				include "menu_lateral.php";
+				include "../includes/menu_lateral.php";
 				
 				
 				}

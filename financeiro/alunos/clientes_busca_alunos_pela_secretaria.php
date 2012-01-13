@@ -1,8 +1,8 @@
 
 <script languague="javascript">function abrirPopup(url,width,height) {window.open(url,"_blank", "toolbar=no,location=no, directories=no,status=no,menubar=no, scrollbars=yes, resizable=no, width="+width+", height="+height+", screenX=0,left=100,screenY=0,top=200");}</script>
 
-<?php include "validacao_pagina_adm.php"; 
-include "conexao_bd.php";
+<?php include "../includes/validacao_pagina_adm.php"; 
+include "../includes/conexao_bd.php";
 
 
 

@@ -5,6 +5,8 @@ include "../includes/conexao_bd.php";
 $id_aluno = $_POST['id_aluno'];
 $boletim =  $_POST['boletim'];
 
+//nome do aluno
+include '../includes/nome_aluno.inc.php' ; 
 
 //seleciona o tipo de ensino
 $tipo_ensino = 'SELECT * FROM tb_tipo_ensino';
@@ -37,6 +39,9 @@ $materia = mysql_query($materia);
 
 
 <div class = "span13">
+
+	<h3><?php echo $nome['nome_completo'] ; ?></h3>
+
 	<form action = "inserir_materias.php" method="post" class = "form-stacked" >
 
 

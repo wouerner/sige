@@ -629,7 +629,7 @@ select,
 .uneditable-input {
   display: inline-block;
   width: 210px;
-/*  height: 18px;  # essa opção devia vim desativada*/
+  height: 18px;
   padding: 4px;
   font-size: 13px;
   line-height: 18px;

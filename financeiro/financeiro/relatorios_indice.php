@@ -65,7 +65,7 @@ window.onerror=function(m,u,l)
 				
 				
 				
-				include ""../includes/menu_lateral.php"";
+				include "../includes/menu_lateral.php";
 				
 				
 				}
