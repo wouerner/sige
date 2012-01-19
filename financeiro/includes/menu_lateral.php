@@ -1,5 +1,6 @@
-<ul class = "">
-	<li>Alunos</li>
+<div id = "navigation">
+<ul>
+	<li><a href = "#"> Alunos</a>
 		<ul>
         	<li><a href="../alunos/clientes_listar_todos_ativos.php" target="_self" tabindex="1"> Listar Alunos </a></li>
 	        <li><a href="../alunos/clientes_cadastar_aluno.php" target="_self" tabindex="1">Cadastrar Alunos </a></li>
@@ -9,7 +10,9 @@
 		<li><a href="../agendamento/agendamento_provas_cadastrar_data.php" target="_self" tabindex="1"> Agendamento de Provas </a></li>
 		<li><a href="../alunos/agendamento_provas_listar_alunos_agendados.php" target="_self" tabindex="1"> Alunos Agendados </a></li>
 		</ul>
-	<li>Financeiro</li>
+	</li>
+
+	<li><a href = "#" >Financeiro </a>
 		<ul>
 	        <li><a href="../financeiro/pagina_principal.php" target="_self" tabindex="1"> <strong>     IN&Iacute;CIO<br> </strong></a></li>
 
@@ -17,11 +20,11 @@
 	        <li><a href="../financeiro/relatorios_indice.php" target="_self" tabindex="1"> Relat&oacute;rios Financeiros </a></li>
 		<li><a href="../financeiro/financeiro_boletos_localizar_nosso_numero.php" target="_self" tabindex="1"> Localizar Boleto por N&ordm; </a></li>
 		</ul>
-</ul>
+	</li>
 
-<ul class = "">
-	<li>Site</li>
-	<ul>
+
+	<li><a href = "#" >Site</a>
+	<ul class = "">
          <li><a href="../site/site_contrato_editar.php" target="_self" tabindex="1"> Contrato </a></li>
          <li><a href="../site/site_endereco_form_editar.php" target="_self" tabindex="1"> Telefone e Endere&ccedil;o </a></li>
          <li><a href="../site/editar_numeros_rolando_topo.php" target="_self" tabindex="1"> Telefone Rolando Topo </a></li>
@@ -34,11 +37,9 @@
 	<li><a href="../site/site_trabalhe_conosco_form_editar.php" target="_self" tabindex="1"> P&aacute;g. Trabalhe Conosco </a></li>
 	<li><a href="../site/site_usuarios_listar_todos_usus.php" target="_self" tabindex="1"> Usu&aacute;rio do Sistema </a></li>
 	</ul>
-				  
-</ul>
+	</li>			  
 
-<ul class = "">
-	<li>Parceiros</li>
+	<li><a href= "#" >Parceiros</a>
 	<ul>
               <li><a href="../parceiros/parceiros_listar_todos_ativos.php" target="_self" tabindex="1"> Listar Parceiros </a></li>
               <li><a href="../parceiros/parceiros_form_cadastrar_parceiro.php" target="_self" tabindex="1"> Cadastrar Parceiro </a></li>
@@ -46,5 +47,7 @@
               <li><a href="../parceiros/parceiros_relatorios_indice.php" target="_self" tabindex="1"> Relat&oacute;rios Parceria </a></li>
 	      <li><a href="../parceiros/parceiros_aluno_parceiros_Buscar.php" target="_self" tabindex="1"> Buscar Aluno de Parceiros </a></li>
 	</ul>
+	</li>
 
 </ul>
+</div>

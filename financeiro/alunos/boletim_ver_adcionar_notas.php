@@ -53,6 +53,7 @@ include '../includes/nome_aluno.inc.php' ;
 	<div class = "span13" >
 
 	<h3><?php echo $nome['nome_completo'] ; ?></h3>	
+	<?php include '../includes/menu_aluno.inc.php' ; ?>
 
               <span class="titulo_principal"><h3>Notas Cadastradas</h3> </span>
               </table>

@@ -1,9 +1,10 @@
 <?php
 
-include "../includes/../includes/validacao_pagina_adm.php";  	
-include "../includes/../includes/conexao_bd.php";
+include "../includes/validacao_pagina_adm.php";  	
+include "../includes/conexao_bd.php";
 
 $id_aluno = $_GET['id_aluno'];
+$codigo_aluno = $_GET['codigo_aluno'];
 
 
 $query_docs = "SELECT * FROM `tb_documentos` WHERE id_aluno=$id_aluno";
@@ -86,6 +87,10 @@ $nome_completo = mysql_fetch_assoc($nome_completo);
 <h3>Aluno : 
 <?php echo $nome_completo['nome_completo']; ?></h3>
 
+<?php include '../includes/menu_aluno.inc.php' ; ?>
+
+
+
 <form	name="form_atualizar"  action="alunos_atualizar_docs.php" method="GET" class = "form-stacked" >
 
 		<input name="fotos" type="checkbox" <?php echo $doc_foto ; ?> value="true" /><label>Fotos</label><br>
@@ -103,6 +108,7 @@ $nome_completo = mysql_fetch_assoc($nome_completo);
 
 
 	      <input name="id_aluno" type="hidden" value="<?php echo $id_aluno ; ?>" />
+	      <input name="codigo_aluno" type="hidden" value="<?php echo $codigo_aluno ; ?>" />
 
 	      <input type="submit" value="Atualizar" class = "btn primary" />
 	

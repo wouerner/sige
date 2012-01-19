@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/pagina_principal.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Curso Supletivo</title>
+<!-- InstanceEndEditable -->
+<script language="JavaScript" src="AC_RunActiveContent.js" type="text/javascript"></script>
+</head>
+
+
+
+
+<body>
+
+
+<!-- FORNULÁRIO DE LOGIN ALINO-->
+<div align="center" >
+  <div style="position:relative; top:0px;  width:0px; height:0px; z-index:995;">
+  	<div id="formulario_login_aluno_topo" style="position:absolute; left: -460px; top: 225px;">
+		 <?php include "formulario_login_aluno_topo.php"; ?>
+    </div>
+  </div>
+</div>
+<!-- FIM FORMULÁRIO DE LOGIN ALUNO -->
+
+
+<!-- TELEFONES NO TOPO ROLANDO-->
+<div align="center" >
+  <div style="position:relative; top:0px;  width:0px; height:0px; z-index:995;">
+  	<div id="telefones_no_topo" style="position:absolute; left: 0px; top: 25px;">
+		 <?php include "telefones_no_topo.php"; ?>
+    </div>
+  </div>
+</div>
+<!-- TELEFONES NO TOPO ROLANDO-->
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="13" align="center">&nbsp;</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td height="41" align="center" valign="bottom"><table width="970" height="30" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="bottom"><?php include "menu.php" ?></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><table width="970" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+      <tr>
+        <td height="5" background="imagens/px_spaco.gif"><img src="imagens/px_spaco.gif" width="5" height="6" /></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><!-- InstanceBeginEditable name="conteudo_site" -->
+<table width="587" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="bottom" bgcolor="#d9e6ef"><table width="587" height="40" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="35">&nbsp;</td>
+        <td width="552"><img src="imagens/titulo_quem_somos.gif" width="200" height="31" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  
+  <tr>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">
+	
+	  <blockquote>
+	    <blockquote class="corpo_texto_geral_01"><?php  	
+include('financeiro/conexao_bd.php');
+
+$SQL = "SELECT * FROM corpo_do_site WHERE id_corp = '1'";  
+$query = mysql_query($SQL);  
+while($x = mysql_fetch_array($query)) {  
+?>
+	        
+	        
+	        
+	        
+	        
+	            <span class="css_corpo_site"><? echo "$x[quem_somos]"; ?></span>
+                    <?php } ?>
+	              <?php mysql_close($link); ?></blockquote>
+	  </blockquote></td>
+  </tr>
+</table>
+<!-- InstanceEndEditable --></td>
+      </tr>
+      <tr>
+        <td align="center" valign="bottom"><?php include "roda_pe.php" ?></td>
+      </tr>
+      <tr>
+        <td height="20" align="center" valign="middle" class="roda_pe">Copyright 2010 - Todos os direitos reservados</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

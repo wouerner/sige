@@ -11,16 +11,9 @@ $doc_reservista = false;
 $doc_hist = false;
 $doc_resi = false;
 
-/*8$doc_foto = $_GET['fotos'];
-$doc_rg_cert = $_GET['rg_certificado'];
-$doc_cpf = $_GET['cpf'];
-$doc_titulo = $_GET['titulo_eleitor'];
-$doc_reservista = $_GET['reservista'] ;
-$doc_hist = $_GET['historico_certificado'];*/
 
 $id_aluno = $_GET['id_aluno'];
-echo $id_aluno;
-
+$codigo_aluno = $_GET['codigo_aluno'];
 
 (isset($_GET['fotos']) ) ? $doc_foto=true : $doc_foto =0;
 (isset($_GET['rg_certificado']) ) ? $doc_rg_cert = true : $doc_rg_cert = 0;
@@ -41,20 +34,9 @@ $query = "UPDATE tb_documentos SET
 		WHERE id_aluno =$id_aluno";
 
 
-
-
 mysql_query($query ) or die("não foi possivel atualizar documentos  ".mysql_error());
+header('location:alunos_checar_docs.php?id_aluno='.$id_aluno.'&codigo_aluno='.$codigo_aluno);
+exit();
 
 ?>
 
-
-<html>
-<head>
-</head>
-
-<body>
-<p>	atualizado com sucesso <br/><a href="alunos_checar_docs.php?id_aluno=<?php echo $id_aluno ; ?>">voltar</a></p>
-
-</body>
-
-</html>
