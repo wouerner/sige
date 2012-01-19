@@ -1,1 +1,0 @@
-<body><a href="boleto_itau/boleto_itau.php?cod_boleto=<? echo "$cod_boleto" ?>&id_aluno=<? echo "$x[id_aluno]" ?>&id_cob=<? echo "$x[id_cob]" ?>" target="_blank"><img src="imagens/ico_boleto.jpg" alt="Vêr e Enviar Boleto" title="Vêr e Enviar Boleto" width="21" height="14" border="0" /></a></body>

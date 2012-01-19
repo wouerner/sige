@@ -1,4 +1,0 @@
-#!/bin/sh
-for i in $(ls *.php); {
-  sed -i 's/validacao_pagina_adm\.php/\.\.\/includes\/validacao_pagina_adm\.php/g' "$i"
-}
