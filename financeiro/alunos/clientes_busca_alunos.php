@@ -6,8 +6,8 @@ header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-ch
 header('Pragma: no-cache');
 header('Expires: 0');
 
-include '../includes/../includes/validacao_pagina_adm.php'; 
-include '../includes/../includes/conexao_bd.php';
+include '../includes/validacao_pagina_adm.php'; 
+include '../includes/conexao_bd.php';
 ?>
 
 <html>
@@ -65,44 +65,17 @@ window.onerror=function(m,u,l)
 		
 	<div class = "row" >
 
-		<div class = "span3">
-		<?php
-						if ($nivel == 'adm')
-				{
-				include "../includes/../includes/menu_lateral.php";
-				
-				
-				}
-				else
-				{
-				//direciona para a página inicial dos usuários cadastrados
-				include "menu_lateral_secretaria.php";
-				
-				}
-		
-			?> 
+		<div class = "span2">
+		<?php	include "../includes/menu_lateral.php" ; ?> 
 
 		</div>
-		<div class = "span13">
-</td>
-        <td width="839" align="center" valign="top"><!-- InstanceBeginEditable name="corpo_programacao_sistema" -->
 
 
-<table width="800" border="0" align="center">
-  
-  <tr>
-    <td width="528" height="160" align="center"><table width="739" border="0" cellspacing="3" cellpadding="4">
-      <tr>
-        <td align="center"><span class="titulo_principal">Resultado da Busca de Alunos </span></td>
-      </tr>
-      <tr>
-        <td><table width="100%" border="0" cellpadding="0" cellspacing="0" background="imagens/px_pontilhado.gif">
-            <tr>
-              <td><p><img src="imagens/px_pontilhado.gif" width="2" height="1"></p></td>
-            </tr>
-        </table></td>
-      </tr>
-      </table>      <span class="fonte02">
+		<div class = "span10">
+
+        <span class="titulo_principal">Resultado da Busca de Alunos </span>
+
+      </table> 
 
 <?php
 
@@ -143,82 +116,90 @@ if(!empty($HTTP_POST_VARS['palavra'])) {
 
         // Gera o Loop com os resultados
         while($x = mysql_fetch_array($sql)) {
+					 $id_aluno = $x['id_aluno'];
+					 $codigo_aluno = $x['codigo_aluno'];
 		
 ?>
     </span>
       
-      <table >
+      <table class = "table table-bordered" >
         <tr>
-          <td width="104" align="right" bgcolor="#F5FFF4" class="fonte02">Nome do Cliente: </td>
-	  <td  bgcolor="#F5FFF4" colspan = "5" class="sub_titulos"><strong class="link_005">
-	<a href="javascript:submenu2('<? echo "$x[id_aluno]" ?>')" class="link_005"><? echo "$x[nome_completo]"; ?></a></strong></td>
-          <td width="139" bgcolor="#F5FFF4" class="sub_titulos"><span class="fonte02">Matricula:</span> <strong class="fonte05"><a href="javascript:submenu2('<? echo "$x[id_aluno]" ?>')" class="link_005"><? echo "$x[id_aluno]"; ?></a></strong></td>
-          <td width="75" rowspan="5" align="center" valign="middle" bgcolor="#F5FFEC" class="sub_titulos"><a href="foto_form_confirmar_antes_upload_01.php?codigo_aluno=<? echo "$x[codigo_aluno]" ?>"><?php echo "<img src=../fotos_do_aluno_3x4/$x[url_foto] width='72' height='80' border='1' />" ?></a></td>
+          <td>Nome do Cliente:
+			  <strong>
+				<a href="javascript:submenu2('<? echo "$x[id_aluno]" ?>')" class="link_005"><? echo "$x[nome_completo]"; ?></a></strong></td>
+			 <td>
+				<span class="fonte02">Matricula:</span> <strong class="fonte05">
+					<a href="javascript:submenu2('<? echo "$x[id_aluno]" ?>')" class="link_005"><? echo "$x[id_aluno]"; ?></a></strong>
+			</td>
+       </tr>
+
+        <tr>
+          <td colspan = "2" >Endere&ccedil;o:
+          <strong class="fonte01"><?php echo $x['lagradouro'] ; ?>, <?php echo $x['numero_casa']; ?>, <? echo "$x[bairro]"; ?>, <? echo "$x[cidade]"; ?>, <? echo "$x[estado_uf]"; ?>. <span class="fonte02">Cep:</span> <? echo "$x[cep]"; ?></strong></td>
+        </tr>
+
+        <tr>
+          <td colspan = "2" >Fones:
+          <span >(<?php echo $x['ddd']; ?>) <? echo "$x[telefones]"; ?> / <? echo "$x[celular]"; ?></span></td>
         </tr>
         <tr>
-          <td width="104" align="right" bgcolor="#F5FFEC" class="fonte02">Endere&ccedil;o:</td>
-          <td colspan="6" bgcolor="#F5FFEC" class="sub_titulos"><strong class="fonte01"><? echo "$x[lagradouro]"; ?>, <? echo "$x[numero_casa]"; ?>, <? echo "$x[bairro]"; ?>, <? echo "$x[cidade]"; ?>, <? echo "$x[estado_uf]"; ?>. <span class="fonte02">Cep:</span> <? echo "$x[cep]"; ?></strong></td>
+          <td colspan = "2" >E-mail:
+          <span ><? echo $x['email']; ?></span></td>
         </tr>
+
         <tr>
-          <td align="right" bgcolor="#F5FFF4" class="fonte02">Fones:</td>
-          <td colspan="6" bgcolor="#F5FFF4"><span class="fonte01">(<? echo "$x[ddd]"; ?>) <? echo "$x[telefones]"; ?> / <? echo "$x[celular]"; ?></span></td>
+          <td colspan = "2" >CPF:
+          <span ><? echo "$x[cpf]"; ?></span></td>
         </tr>
+
         <tr>
-          <td align="right" bgcolor="#F5FFEC" class="fonte02">E-mail:</td>
-          <td colspan="6" bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[email]"; ?></span></td>
-        </tr>
-        <tr>
-          <td align="right" bgcolor="#F5FFF4" class="fonte02">CPF:</td>
-          <td colspan="6" bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[cpf]"; ?></span></td>
-        </tr>
-        <tr>
-          <td colspan="8" align="right" valign="top" bgcolor="#F5FFF4" class="fonte02">
+          <td colspan="8" align="right" valign="top"  class="fonte02">
 		  
             <div id="info_<? echo "$x[id_aluno]" ?>" class="areaDesc2" style="display: none;">
-            <table width="735" border="0" align="center">
 
+            <table>
             <tr>
-              <td width="103" align="right" bgcolor="#F5FFEC" class="fonte02">RG:</td>
-              <td width="622" bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[rg]"; ?></span></td>
+              <td>RG:</td>
+              <td><span class="fonte01"><? echo "$x[rg]"; ?></span></td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#F5FFF4" class="fonte02">Expedi&ccedil;&atilde;o:</td>
-              <td bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[expedicao]"; ?></span></td>
+              <td class="fonte02">Expedi&ccedil;&atilde;o:</td>
+              <td><span class="fonte01"><? echo "$x[expedicao]"; ?></span></td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#F5FFEC" class="fonte02">&nbsp;</td>
-              <td bgcolor="#F5FFEC">&nbsp;</td>
+              <td  class="fonte02">&nbsp;</td>
+              <td>&nbsp;</td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#F5FFF4" class="fonte02">In&iacute;cio do Curso:</td>
-              <td bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[inicio_curso]"; ?></span></td>
+              <td class="fonte02">In&iacute;cio do Curso:</td>
+              <td><span class="fonte01"><? echo "$x[inicio_curso]"; ?></span></td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#F5FFEC" class="fonte02">Tipo do Curso: </td>
-              <td bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[tipo_curso]"; ?></span></td>
+              <td  class="fonte02">Tipo do Curso: </td>
+              <td><span class="fonte01"><? echo "$x[tipo_curso]"; ?></span></td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#F5FFEC" class="fonte02">Pagamento:</td>
-              <td bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[situacao_aluno]"; ?></span></td>
+              <td  class="fonte02">Pagamento:</td>
+              <td><span class="fonte01"><? echo "$x[situacao_aluno]"; ?></span></td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#F5FFF4" class="fonte02">Polo:</td>
-              <td bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[polo]"; ?></span></td>
+              <td  class="fonte02">Polo:</td>
+              <td><span class="fonte01"><? echo "$x[polo]"; ?></span></td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#F5FFEC" class="fonte02">Senha login:</td>
-              <td bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[senha]"; ?></span></td>
+              <td  class="fonte02">Senha login:</td>
+              <td><span class="fonte01"><? echo "$x[senha]"; ?></span></td>
             </tr>
             <tr>
-              <td align="right" bgcolor="#F5FFF4" class="fonte02">Observa&ccedil;&atilde;o</td>
-              <td bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[descricao1]"; ?></span></td>
+              <td  class="fonte02">Observa&ccedil;&atilde;o</td>
+              <td><span class="fonte01"><? echo "$x[descricao1]"; ?></span></td>
             </tr>
             <tr>
               <td align="right" bgcolor="#F5FFF4" class="fonte02">Data de cadastro: </td>
-              <td bgcolor="#F5FFF4"><span class="fonte01">
+              <td><span class="fonte01">
                 <?
 	  	  
-	  $data_quebrada = explode('-', $x[data_cadastro]);
+	  $data_quebrada = explode('-', $x['data_cadastro']);
 	  $data_cadastro2 = $data_quebrada[2].'/'.$data_quebrada[1].'/'.$data_quebrada[0];
 	  echo "$data_cadastro2";
 	  
@@ -226,20 +207,15 @@ if(!empty($HTTP_POST_VARS['palavra'])) {
 	      </span>
 		</td>
             </tr>
-          </table>
+      </table>
+
 	    </div>
 
-		</td>
-          </tr>
+      </table>
 
-        <tr>
-
-          <td colspan="3" align="right" bgcolor="#F5FFEC">
-		  
-		  
 		  <?php if ($x['registro_ativo']== 's')
 		  {
-		  include "clientes_busca_alunos_menu_opcoes_desativar.php";
+		  include "../includes/menu_aluno.inc.php";
 		  }
 		  else
 		  {
@@ -247,30 +223,12 @@ if(!empty($HTTP_POST_VARS['palavra'])) {
 		  }
 		  
 		?>
-	  </td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td colspan="3" align="right">&nbsp;</td>
-        </tr>
-      </table>
-      <? } } ?></td>
-    <td width="262" align="center"><span class="style2">
-      </span></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center">&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="2"><?
-mysql_close($link);
-?></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><a href="pg_principal.php" class="style5"></a>    </td>
-  </tr>
-</table>
-</table>
+
+      <? } } ?>
+
+
+<?php mysql_close($link) ; ?>
+
 
 </body>
 </html>

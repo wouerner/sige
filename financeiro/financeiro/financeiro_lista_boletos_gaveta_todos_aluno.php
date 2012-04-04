@@ -1,6 +1,6 @@
 <?php
 include "../includes/validacao_pagina_adm.php";  	
-include "../includes/../includes/../includes/../includes/../includes/conexao_bd.php";
+include "../includes/conexao_bd.php";
 ?>
 
 <html>
@@ -65,30 +65,7 @@ window.onerror=function(m,u,l)
 	<div class = "row">	
 	<div class = "span3">	
 		<?php
-		
-			
-						if ($nivel == 'adm')
-				{
-				
-				
-				
 				include "../includes/menu_lateral.php";
-				
-				
-				}
-				else
-				{
-				
-				
-				//direciona para a página inicial dos usuários cadastrados
-				
-				include "menu_lateral_secretaria.php";
-				
-				}
-		
-		
-		
-		
 ?> 
 	</div>
 

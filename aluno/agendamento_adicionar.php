@@ -98,10 +98,43 @@ $(document).ready(function(){
 			
 		}
 
+
+		if(selecao == 'ensino médio' ){
+
+
+			$('#materias').html('<option value="1"> Artes </option>' +
+								'<option value="4"> Espanhol </option> '+
+								'<option value="5"> Geografia </option> '+
+								'<option value="6"> História </option> '+
+								'<option value="7"> Inglês </option> '+
+								'<option value="8"> Matemática </option> '+
+								'<option value="9"> Português </option> '+
+								'<option value="10"> Biologia </option> '+
+								'<option value="11"> Filosofia </option> '+
+								'<option value="12"> Física </option> '+
+								'<option value="13"> Química </option> '+
+								'<option value="14"> Sociologia </option> '
+								);
+		
+		}
+
+		if(selecao == 'ensino fundamental' ){
+
+			$('#materias').html('<option value="1"> Artes </option>' +
+								'<option value="2"> Ciências </option> ' +
+								'<option value="5"> Geografia </option> '+
+								'<option value="6"> História </option> '+
+								'<option value="7"> Inglês </option> '+
+								'<option value="8"> Matemática </option> '+
+								'<option value="9"> Português </option> '
+								);
+
+		}
+
 	}
 	);
 
-} 
+	} 
 	)
 	
 // ]]>

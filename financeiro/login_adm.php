@@ -62,7 +62,7 @@ setcookie("nivel", $nivel,     time()+4800*10);
 				
 				
 				//direciona para a página inicial dos usuários cadastrados
-				header ("Location:pagina_principal_secretaria.php");
+				header ("Location:financeiro/pagina_principal_secretaria.php");
 				}
 				
 				

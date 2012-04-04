@@ -80,48 +80,79 @@ $nome_completo = mysql_fetch_assoc($nome_completo);
 	<div class = "container" >
 	<?php include '../includes/cabecalho.inc.php' ; ?>
 <div class = "row" >
-	<div class = "span3">
-	<?php include '../includes/../includes/menu_lateral.php' ; ?>
+	<div class = "span2">
+	<?php include '../includes/menu_lateral.php' ; ?>
 	</div>
-	<div class = "span13">
+	<div class = "span10">
 <h3>Aluno : 
 <?php echo $nome_completo['nome_completo']; ?></h3>
 
 <?php include '../includes/menu_aluno.inc.php' ; ?>
 
 
+<div class = "span10" >
 
-<form	name="form_atualizar"  action="alunos_atualizar_docs.php" method="GET" class = "form-stacked" >
+<form	name="form_atualizar"  action="alunos_atualizar_docs.php" method="GET" class = "form-horizontal" >
 
-		<input name="fotos" type="checkbox" <?php echo $doc_foto ; ?> value="true" /><label>Fotos</label><br>
+<fieldset>
+	<legend>Documentos Entregues</legend>
 
-		<input name="rg_certificado" type="checkbox" <?php echo $doc_rg_cert ; ?> value="true"/><label>RG / Certidão Nascimento</label><br>
+<div class = "row" >
+	<div class = "span5" >
 
-		<input name="cpf" type="checkbox" <?php echo $doc_cpf ; ?> value="true"/><label>CPF</label><br>
+		<div class = "control-group" >
+			
+			<div class = "controls" >
+					  <label  class = "checkbox" >
+						  <input  name="fotos" type="checkbox" <?php echo $doc_foto ; ?> value="true"  /> 	
+						  Fotos
+					  </label>
 
-		<input name="titulo_eleitor" type="checkbox" <?php echo $doc_titulo ; ?> value="true" /><label>Titulo de Eleitor</label><br>
+					  <label class = "checkbox" >
+						  <input name="rg_certificado" type="checkbox" <?php echo $doc_rg_cert ; ?> value="true"/>
+						  RG / Certidão Nascimento
+					  </label>
 
-		<input name="reservista" type="checkbox" <?php echo $doc_reservista ; ?> value="true" /><label>Reservista</label><br>
+					  <label class = "checkbox" >
+					  <input name="cpf" type="checkbox" <?php echo $doc_cpf ; ?> value="true"/>
+						  CPF
+					  </label>
+			</div>
 
-		<input name="historico_certificado" type="checkbox" <?php echo $doc_hist ;?> value="true" /><label>Historico / Certificado</label><br>
-		<input name="compr_residencia" type="checkbox" <?php echo $doc_resi ;?> value="true" /><label>Comprovante de residência</label><br>
+		</div>
 
+</div>
 
+<div class = "span5" >
+		<div class = "control-group" >
+			<div class = "controls" >
+				<label class = "checkbox " > Titulo de Eleitor
+					<input class = "" name="titulo_eleitor" type="checkbox" <?php echo $doc_titulo ; ?> value="true" />
+				</label>
+
+					  <label class = "checkbox " ></label>
+						  <input name="reservista" type="checkbox" <?php echo $doc_reservista ; ?> value="true" /> Reservista</label>
+
+					  <label class = "checkbox " > </label>
+						  <input name="historico_certificado" type="checkbox" <?php echo $doc_hist ;?> value="true" />Historico / Certificado</label>
+
+					  <label class = "checkbox " ></label>
+							  <input name="compr_residencia" type="checkbox" <?php echo $doc_resi ;?> value="true" />Comprovante de residência</label>
+		</div>
+	</div>
+</div>
+
+<div class = "span7" >
+		<div class = "form-actions" >
 	      <input name="id_aluno" type="hidden" value="<?php echo $id_aluno ; ?>" />
 	      <input name="codigo_aluno" type="hidden" value="<?php echo $codigo_aluno ; ?>" />
+		
+			<input type="submit" value="Atualizar" class = "btn btn-primary" />
+		</div>
+</div>
 
-	      <input type="submit" value="Atualizar" class = "btn primary" />
-	
+</fieldset>	
 
-</form>
-
-<form name="form_voltar" action="clientes_busca_alunos.php" method = "post" > 
-<input type="hidden" name = "palavra" value="<?php echo $nome_completo['nome_completo'] ; ?>"/>
-<input type="hidden" name = "tipo_aluno" value="s"/>
-
-<input type="submit" value="Voltar" class = "btn" />
-
-</form>
 </div>
 </div>
 </body>

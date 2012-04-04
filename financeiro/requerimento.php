@@ -1,6 +1,6 @@
 <?php
 
-include "conexao_bd.php";
+include "includes/conexao_bd.php";
 
 $SQL = "SELECT * FROM corpo_contrato";
 $query = mysql_query($SQL);  

@@ -1,8 +1,6 @@
 [Dolphin]
 AdditionalInfoV2=Details_Size,Details_Date,CustomizedDetails
+PreviewsShown=true
 ShowPreview=true
-SortOrder=1
-Sorting=2
-Timestamp=2011,9,19,9,53,35
+Timestamp=2012,3,7,10,4,3
 Version=2
-ViewMode=1

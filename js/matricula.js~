@@ -4,6 +4,7 @@ jQuery(function($){
    $(".telefone").mask("(99) 9999-9999");
    $("#cep").mask("99999-999");
    $("#data_cadastro").mask("99/99/9999");
+   $("#termino_curso").mask("99/99/9999");
 
 
 });
@@ -74,7 +75,7 @@ $(function(){
 		      }  ,
 	submitHandler: function(form) {
 			       			$('#enviar').onclick($(this).disable());
-			      			//form.submit();
+			      			form.submit();
 					       		}	
 		    });  
 		      

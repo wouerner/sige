@@ -5,24 +5,31 @@
         	<li><a href="../alunos/clientes_listar_todos_ativos.php" target="_self" tabindex="1"> Listar Alunos </a></li>
 	        <li><a href="../alunos/clientes_cadastar_aluno.php" target="_self" tabindex="1">Cadastrar Alunos </a></li>
         	<li><a href="../alunos/clientes_listar_gaveta.php" target="_self" tabindex="1"> Listar Alunos Gaveta </a></li>
-		<li><a href="../aviso/listarAvisos.php" target="_self" tabindex="1">Avisos</a></li>
-		<li><a href="../alunos/relatorio_alunos_agendados.php" target="_blank" tabindex="1"> Relatorio alunos agendados </a></li>
-		<li><a href="../agendamento/agendamento_provas_cadastrar_data.php" target="_self" tabindex="1"> Agendamento de Provas </a></li>
-		<li><a href="../alunos/agendamento_provas_listar_alunos_agendados.php" target="_self" tabindex="1"> Alunos Agendados </a></li>
+		<?php if ($nivel == 'adm'): ?> <li><a href="../aviso/listarAvisos.php" target="_self" tabindex="1">Avisos</a></li> <?php endif ; ?>
+		<?php if ($nivel == 'adm'): ?><li><a href="../alunos/relatorio_alunos_agendados.php" target="_blank" tabindex="1"> Relatorio alunos agendados </a></li><?php endif ; ?>
+		<?php if ($nivel == 'adm'): ?><li><a href="../agendamento/agendamento_provas_cadastrar_data.php" target="_self" tabindex="1"> Agendamento de Provas </a></li><?php endif ; ?>
+		<?php if ($nivel == 'adm' || $nivel == 'sec'): ?><li><a href="../alunos/agendamento_provas_listar_alunos_agendados.php" target="_self" tabindex="1"> Alunos Agendados </a></li> <?php endif ; ?>
 		</ul>
 	</li>
 
 	<li><a href = "#" >Financeiro </a>
 		<ul>
-	        <li><a href="../financeiro/pagina_principal.php" target="_self" tabindex="1"> <strong>     IN&Iacute;CIO<br> </strong></a></li>
+      <li><a href="../financeiro/pagina_principal.php" target="_self" tabindex="1"> <strong>     IN&Iacute;CIO<br> </strong></a></li>
 
-        	<li><a href="../financeiro/financeiro_lista_boletos_gaveta_todos_aluno.php" target="_self" tabindex="1"> Listar Boletos Gaveta  </a></li>
+	<?php if ($nivel == 'adm' ) : ?>	
+		 <li><a href="../financeiro/financeiro_lista_boletos_gaveta_todos_aluno.php" target="_self" tabindex="1"> Listar Boletos Gaveta  </a></li> 
+	<?php endif ; ?>
+
+	<?php if ($nivel == 'adm' || $nivel == 'fin' ) : ?>	
 	        <li><a href="../financeiro/relatorios_indice.php" target="_self" tabindex="1"> Relat&oacute;rios Financeiros </a></li>
+
 		<li><a href="../financeiro/financeiro_boletos_localizar_nosso_numero.php" target="_self" tabindex="1"> Localizar Boleto por N&ordm; </a></li>
+	<?php endif ; ?>
 		</ul>
 	</li>
 
 
+	<?php if ($nivel == 'adm'  ) : ?>	
 	<li><a href = "#" >Site</a>
 	<ul class = "">
          <li><a href="../site/site_contrato_editar.php" target="_self" tabindex="1"> Contrato </a></li>
@@ -48,6 +55,6 @@
 	      <li><a href="../parceiros/parceiros_aluno_parceiros_Buscar.php" target="_self" tabindex="1"> Buscar Aluno de Parceiros </a></li>
 	</ul>
 	</li>
-
+	<?php endif; ?>
 </ul>
 </div>

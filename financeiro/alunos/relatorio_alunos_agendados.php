@@ -1,7 +1,7 @@
 <?php
 
-include "../includes/../includes/validacao_pagina_adm.php";
-include "../includes/../includes/conexao_bd.php";
+include "../includes/validacao_pagina_adm.php";
+include "../includes/conexao_bd.php";
 
 $query = "SELECT  a.nome_completo AS nome_aluno , m.nome AS materia , tp_en.nome AS curso, dt.data_disponivel
 FROM 
@@ -32,11 +32,15 @@ $res = mysql_query($query);
 <body>
 
 <div class  = "container">
-<div class = "row">
-<table>
+
+<div class = "span11" >
+		  <div class = "row">
+<table class = "table" >
 <thead>
 <td>Data</td>
 <td>Nome</td>
+<td>Curso</td>
+<td>Matéria</td>
 <td>Curso</td>
 <td>Matéria</td>
 
@@ -45,32 +49,62 @@ $res = mysql_query($query);
 <?php 
 $tmp;
 $tmp_ant=null;
+$alunoAnterior = null ; 
+$classificacao = false ;
 while($valor = mysql_fetch_assoc($res)){  
-$tmp = $valor['data_disponivel'];
+	$tmp = $valor['data_disponivel'];
 ?>
 
 	<?php if ($tmp != $tmp_ant) : ?>
 	<tr>
-		<td colspan = "4">
+		<td colspan = "6">
 			<?php  echo ($tmp == $tmp_ant) ? ("") : ($tmp_ant=$valor['data_disponivel']) ; ?> 
 		</td>
 	</tr>
 	<?php endif ; ?>
 
-	<tr>
-			<td></td>
-			<td> <?php echo $valor['nome_aluno'] ; ?> </td>
-			<td> <?php echo $valor['curso'] ; ?> </td>
-			<td> <?php echo $valor['materia'] ; ?> </td>
-	</tr>
 
-<?php } ?>
+			<?php if ($valor['nome_aluno'] == $alunoAnterior ) : ?>
+
+				<?php if ($valor['curso'] !== 'Classificação') : ?>
+				<td>  <?php echo $valor['curso'] ; ?> </td>
+				<td> <?php echo $valor['materia'] ; ?> </td>
+				<?php else : ?>
+
+
+
+				<?php endif ; ?>
+			</tr>
+
+			<?php else :  ?>
+			
+			<tr>
+				<td></td>
+				<td> <?php echo $valor['nome_aluno'] ; ?> </td>
+
+				<?php if ($valor['curso'] == 'Classificação') : ?>
+
+				<td> <?php echo $valor['curso'] ; ?>  4 materias </td>
+				<?php else : ?>
+
+				<td> <?php echo $valor['curso'] ; ?> </td>
+				<td>  <?php echo $valor['materia'] ; ?> </td>
+
+				<?php endif ; ?>
+
+			<?php endif ; ?>
+
+<?php 
+
+			$alunoAnterior = $valor['nome_aluno'] ;
+
+} ?>
 
 
 </table>
 
 </div>	
 </div>
-
+</div>
 </body>
 <html>

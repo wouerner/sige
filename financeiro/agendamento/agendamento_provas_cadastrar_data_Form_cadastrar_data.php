@@ -1,12 +1,6 @@
 <?php
-#Evitando cache de arquivo
-header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-header('Last Modified: '. gmdate('D, d M Y H:i:s') .' GMT');
-header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
-header('Pragma: no-cache');
-header('Expires: 0');
-
 include '../includes/validacao_pagina_adm.php' ;
+include "../includes/conexao_bd.php";
 ?>
 
 <html>
@@ -19,16 +13,6 @@ include '../includes/validacao_pagina_adm.php' ;
 <meta name="robots" content="follow" />
 <meta name="revisit-after" content="15 days" />
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<style type="text/css">
-<!--
-body {
-	background-image: url(imagens/background.gif);
-	background-repeat: repeat-y;
-	background-color: #FFFFFF;
-}
--->
-</style>
-
 
 <script type="text/javascript" language="JavaScript1.2" src="Resource/js/stmenu.js"></script>
 <script type="text/javascript" language="JavaScript1.2">
@@ -62,33 +46,14 @@ window.onerror=function(m,u,l)
 <?php include '../includes/cabecalho.inc.php' ; ?>
 
 <div class = "row">
-	<div class = "span3" >
-		<?php
-						if ($nivel == 'adm')
-				{
-				include "../includes/menu_lateral.php";
-				
-				}
-				else
-				{
-				//direciona para a página inicial dos usuários cadastrados
-				include "menu_lateral_secretaria.php";
-				
-				}
-?>
-		</div> 
 
-	<div class = "span13">
+	<div class = "span2" >
+		<?php		include "../includes/menu_lateral.php" ; ?>
+	</div> 
 
-        <td width="839" align="center" valign="top"><!-- InstanceBeginEditable name="corpo_programacao_sistema" -->
+	<div class = "span10">
 
-<?php
-include "../includes/validacao_pagina_adm.php";
-
-include "../includes/conexao_bd.php";
-
-?>    
-
+        <td>
 
 <script type="text/javascript">
 
@@ -128,11 +93,6 @@ function formatar_mascara(src, mascara) {
 		return false;
 	}
 
-
-
-
-
-
 	// Função de validação do formulário - Nome
 		if (document.formulario.categoria.value==""){ // O nome formulario se refere ao nome de seu formulario, caso queira alterar, basta mudar o nome de seu formulário e mudar todas as palavras desta tag com este nome.
 		alert("Selecione uma modalidade para a Parcela"); // Mensagem que será exibida quando o campo não for preenchido 
@@ -149,10 +109,6 @@ function formatar_mascara(src, mascara) {
 	return false;
 	}
   
-
-
-
-	
 	
 	return true;
 }
@@ -205,11 +161,11 @@ function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e){
 }
       </script>
 
- <p align="center" class="titulo_principal">Datas Cadastradas</p>
+ <p>Datas Cadastradas</p>
      </table>
    </tr>
  </table>
- <table width="751" border="0" align="center">
+ <table>
   <tr>
    
 	<form name="formulario" id="formulario" onSubmit="return ValidaFormulario()" method="post" action="agendamento_provas_cadastrar_data_Form_cadastrar_data_Insert_bd.php">
@@ -227,7 +183,7 @@ function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e){
       <input name="cob_enviada" type="hidden" id="cob_enviada" size="15" maxlength="10"  value="N&atilde;o" />
       </span>
 
-      <input type="submit" class="em_cima btn" value="INSERIR DATA" />
+      <input type="submit" class="btn btn-primary" value="INSERIR DATA" />
 </form>
 
 <?php mysql_close($link); ?>

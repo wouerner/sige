@@ -159,23 +159,11 @@ function MM_swapImage() { //v3.0
 
 <?php include '../includes/cabecalho.inc.php' ; ?>
 <div class = "row">
-<div class = "span3">
+<div class = "span2">
 		
-		<?php
-						if ($nivel == 'adm')
-				{
-				include "../includes/menu_lateral.php";
-				
-				}
-				else
-				{
-				//direciona para a página inicial dos usuários cadastrados
-				include "menu_lateral_secretaria.php";
-				
-				}
-?>
+		<?php 	include "../includes/menu_lateral.php" ; ?>
 </div>
-<div class = "span13">
+<div class = "span10">
       <h2><span class="titulo_principal">Datas Cadastradas </span></h2>
 
     <?php
@@ -189,40 +177,23 @@ $query = mysql_query($SQL);
           <td height="50" align="center" class="style7"><a href="pagina_principal.php" target="_self">
             <?php
 				
-						if ($nivel == 'adm')
-				{
-				
-				
-				
 				echo"<span class='fonte_003'><span class='titulo_01'><strong><a href='agendamento_provas_cadastrar_data_Form_cadastrar_data.php' target='_self' class='links_001 btn'>ADCIONAR + DATAS</a></strong></span></span>";
 				
 				
-				}
-				else
-				{
-				
-				
-				//direciona para a p&aacute;gina inicial dos usu&aacute;rios cadastrados
-				
-
-				
-				}
-		
-		
 		
 		
 		?>
             </a>
             </table>
 
-		<table>
+		<table class = "table" >
 
               <?php  while($x2 = mysql_fetch_array($query)) : ?>
                 
                 <tr>
-                  <td width="87" height="38" align="right" valign="middle" class="fonte02">Data:</td>
-		  <td width="530" valign="middle" class="sub_titulos">
-			<strong class="fonte_006">
+                  <td>Data:</td>
+		  				<td>
+						<strong>
 				  
 				  <?php
 				  
@@ -234,13 +205,13 @@ $query = mysql_query($SQL);
 		</td>
 
 		<td>
-			<a class = "btn danger " href="agendamento_provas_cadastrar_data_Deletar.php?id_data=<? echo "$x2[id_data]"; ?>&funcao=nao" target="_self" class="links_001">
+			<a class = "btn btn-danger " href="agendamento_provas_cadastrar_data_Deletar.php?id_data=<? echo "$x2[id_data]"; ?>&funcao=nao" target="_self" class="links_001">
                     Excluir 
 		    </a>
 		</td>
 
 		<td> 
-				<form action="agendamento/ativar_agendamento.php" method="post">
+				<form action="../agendamento/ativar_agendamento.php" method="post">
 				
 				<button type = "submit" class = "btn">
 					<?php echo $x2['ativo'] ? "desativar" : "ativar" ;?>

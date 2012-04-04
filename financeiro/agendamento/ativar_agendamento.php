@@ -1,6 +1,6 @@
 <?php
 //include "../validacao_pagina_adm.php";
-include "../conexao_bd.php";
+include "../includes/conexao_bd.php";
 
 $idData = $_POST['id_data'];
 $status = $_POST['status'];
@@ -9,6 +9,6 @@ $sql = "UPDATE tb_agenda_provas SET ativo = $status WHERE tb_agenda_provas.id_da
 
 $resutlado = mysql_query($sql);
 
-header('Location:../agendamento_provas_cadastrar_data.php');
+header('Location:../agendamento/agendamento_provas_cadastrar_data.php');
 exit();
 ?>

@@ -1,12 +1,15 @@
-		<div class = "row">
-			<div class = "span5" >
+		<div id = "cab" class = "row">
+			<div class = "span2" >
                			<h4> CEBAN - SG </h4>
 			</div>
-			<div class = "span9">
+			<div class = "span8">
 					<?php include "formulario_de_busca_de_alunos.php"; ?>
 			</div>
-			<div class = "span2">
-				<a href="logout_adm.php">
-				<img src="../imagens/icone_cadeado.gif" alt="Fechar o Sistema" width="39" height="45" border="0" title="Fechar o Sistema"></a>
+
+			<div>
+				<a class = "btn btn-danger" href="../logout_adm.php">
+					<i class = "icon-off icon-white" ></i>
+					Sair
+				</a>
 			</div>
 		</div>

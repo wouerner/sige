@@ -1,4 +1,4 @@
-<form action="clientes_busca_alunos.php" method="post">
+<form action="../alunos/clientes_busca_alunos.php" method="post" class = "form-horizontal" >
               <span class="sub_titulos">Buscar Alunos  </span>
 
                       <input name= "palavra"  id="palavra" maxlength="25"/>
@@ -8,9 +8,9 @@
                         <option value="s" selected>Ativos</option>
                         <option value="cpf" >CPF</option>
 
-		    <?php if($nivel == "adm") { ?> 
+		    <?php if($nivel == "adm") : ?> 
                        <option value="n">Gaveta</option>
-	            <?php } ?>
+	       <?php endif ; ?>
                 </select>
               <input name="Submit" type="submit" class=" btn " value="Buscar" />
 </form>

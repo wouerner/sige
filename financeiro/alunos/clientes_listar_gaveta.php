@@ -56,31 +56,22 @@ window.onerror=function(m,u,l)
 	<div class = "container">
 		<?php include '../includes/cabecalho.inc.php' ; ?>
 		<div class = "row">
-		<div class = "span3">
+		<div class = "span2">
 		<?php
-			if ($nivel == 'adm')
-				{
-				include "../includes/../includes/menu_lateral.php";
+				include "../includes/menu_lateral.php";
 				
-				}
-				else
-				{
-				//direciona para a página inicial dos usuários cadastrados
-				include "menu_lateral_secretaria.php";
-				
-				}
 		?> 
 
 		</div>
-		<div class = "span13" >
+		<div class = "span10" >
 
               <span class="titulo_principal">Listagem de  Clientes Desativados</span>
 
 
-  <table width="733" border="0" align="center">
+  <table>
     <tr>
-      <td align="center">
-      <p class="fonte04">A listagem,  abaixo s&atilde;o todos aqueles que est&atilde;o aquardando libera&ccedil;&atilde;o.<br>
+      <td>
+      <p>A listagem,  abaixo s&atilde;o todos aqueles que est&atilde;o aquardando libera&ccedil;&atilde;o.<br>
         <span class="fonte02">A qualquer momento esclolha a op&ccedil;&atilde;o &quot;<strong>Ativar Este Aluno</strong>&quot; para que o mesmo fa&ccedil;a parte<br> 
         do Sistema, tendo acesso a Todos os recursos do Site. </span></p></td>
     </tr>
@@ -94,35 +85,34 @@ while($x = mysql_fetch_array($query))
 ?>
 
 
-  <table width="735" border="0" align="center">
+  <table>
     <tr>
-      <td width="108" align="right" bgcolor="#F5FFF4" class="fonte02">Nome do Cliente: </td>
-      <td width="464" bgcolor="#F5FFF4" class="sub_titulos"><strong class="fonte05"><a href="javascript:submenu2('<? echo "$x[id_aluno]" ?>')" class="link_005"><? echo "$x[nome_completo]"; ?></a></strong></td>
-      <td width="149" bgcolor="#F5FFF4" class="sub_titulos"><span class="fonte02">Matricula:</span> <strong class="fonte05"><a href="javascript:submenu2('<? echo "$x[id_aluno]" ?>')" class="link_005"><? echo "$x[id_aluno]"; ?></a></strong></td>
+      <td>Nome do Cliente: </td>
+      <td ><strong class="fonte05"><a href="javascript:submenu2('<?php echo $x['id_aluno'] ; ?>')" class="link_005"><? echo "$x[nome_completo]"; ?></a></strong></td>
+		<td><span class="fonte02">Matricula:</span> <strong class="fonte05"><a href="javascript:submenu2('<? echo "$x[id_aluno]" ?>')" class="link_005"><? echo "$x[id_aluno]"; ?></a></strong>
+		</td>
     </tr>
     <tr>
-      <td width="108" align="right" bgcolor="#F5FFEC" class="fonte02">Endere&ccedil;o:</td>
-      <td colspan="2" bgcolor="#F5FFEC" class="sub_titulos"><strong class="fonte01"><? echo "$x[lagradouro]"; ?>, <? echo "$x[numero_casa]"; ?>, <? echo "$x[bairro]"; ?>, <? echo "$x[cidade]"; ?>, <? echo "$x[estado_uf]"; ?>. <span class="fonte02">Cep:</span> <? echo "$x[cep]"; ?></strong></td>
+      <td>Endere&ccedil;o:</td>
+      <td><strong class="fonte01"><?php echo $x['lagradouro'] ; ?>, <?php echo $x['numero_casa'] ; ?>, <?php echo $x['bairro'] ; ?>, <?php echo $x['cidade'] ; ?>, <?php echo $x['estado_uf'] ; ?>. <span class="fonte02">Cep:</span> <?php echo $x['cep']; ?></strong></td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#F5FFF4" class="fonte02">Fones:</td>
-      <td colspan="2" bgcolor="#F5FFF4"><span class="fonte01">(<? echo "$x[ddd]"; ?>)  <? echo "$x[telefones]"; ?> / <? echo "$x[celular]"; ?></span></td>
+      <td>Fones:</td>
+      <td><span class="fonte01">(<?php echo $x['ddd'] ; ?>)  <? echo "$x[telefones]"; ?> / <? echo "$x[celular]"; ?></span></td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#F5FFEC" class="fonte02">E-mail:</td>
-      <td colspan="2" bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[email]"; ?></span></td>
+      <td>E-mail:</td>
+      <td><span class="fonte01"><? echo "$x[email]"; ?></span></td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#F5FFF4" class="fonte02">CPF:</td>
-      <td colspan="2" bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[cpf]"; ?></span></td>
+      <td>CPF:</td>
+      <td colspan="2" ><span class="fonte01"><?php echo $x['cpf'] ; ?></span></td>
     </tr>
+
     <tr>
-      <td colspan="3" align="left" valign="top" bgcolor="#F5FFF4" class="fonte02">
+      <td colspan="3" >
 	  
-	  
-	  
-	  
-	    <div id="info_<? echo "$x[id_aluno]" ?>" class="areaDesc2" style="display: none;">
+	    <div id="info_<?php echo $x['id_aluno'] ; ?>" class="areaDesc2" style="display: none;">
 	  
         <table width="677" border="0">
         <tr>
@@ -150,32 +140,32 @@ while($x = mysql_fetch_array($query))
           </span></td>
         </tr>
         <tr>
-          <td align="right" bgcolor="#F5FFEC" class="fonte02">&nbsp;</td>
-          <td bgcolor="#F5FFEC"></td>
+          <td>&nbsp;</td>
+          <td></td>
         </tr>
         <tr>
-          <td align="right" bgcolor="#F5FFF4" class="fonte02">In&iacute;cio do Curso:</td>
-          <td bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[inicio_curso]"; ?></span></td>
+          <td>In&iacute;cio do Curso:</td>
+          <td><span class="fonte01"><? echo "$x[inicio_curso]"; ?></span></td>
         </tr>
         <tr>
-          <td align="right" bgcolor="#F5FFEC" class="fonte02">Tipo do Curso: </td>
-          <td bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[tipo_curso]"; ?></span></td>
+          <td> Tipo do Curso: </td>
+          <td><span class="fonte01"><? echo "$x[tipo_curso]"; ?></span></td>
         </tr>
         <tr>
-          <td align="right" bgcolor="#F5FFEC" class="fonte02">Pagamento:</td>
-          <td bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[situacao_aluno]"; ?></span></td>
+          <td>Pagamento:</td>
+          <td><span class="fonte01"><? echo "$x[situacao_aluno]"; ?></span></td>
         </tr>
         <tr>
-          <td align="right" bgcolor="#F5FFF4" class="fonte02">Polo:</td>
-          <td bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[polo]"; ?></span></td>
+          <td>Polo:</td>
+          <td><span class="fonte01"><? echo "$x[polo]"; ?></span></td>
         </tr>
         <tr>
-          <td align="right" bgcolor="#F5FFEC" class="fonte02">Senha login:</td>
-          <td bgcolor="#F5FFEC"><span class="fonte01"><? echo "$x[senha]"; ?></span></td>
+          <td>Senha login:</td>
+          <td><span class="fonte01"><? echo "$x[senha]"; ?></span></td>
         </tr>
         <tr>
-          <td align="right" bgcolor="#F5FFF4" class="fonte02">Observa&ccedil;&atilde;o</td>
-          <td bgcolor="#F5FFF4"><span class="fonte01"><? echo "$x[descricao1]"; ?></span></td>
+          <td>Observa&ccedil;&atilde;o</td>
+          <td><span class="fonte01"><? echo "$x[descricao1]"; ?></span></td>
         </tr>
       </table>
 		</div>		</td>
@@ -183,11 +173,15 @@ while($x = mysql_fetch_array($query))
     <tr>
       <td bgcolor="#F5FFEC">&nbsp;</td>
       <td colspan="2" bgcolor="#F5FFEC"><table width="607" border="0">
-        <tr>
-          <td width="128" class="links"><a href="clientes_ativar_desativar_aluno.php?id_aluno=<? echo "$x[id_aluno]" ?>&funcao=ativar">Ativar Este Aluno   </a></td>
+
+	<tr>
+	<?php  if ( $nivel != 'sec'):  ?>
+	  <td width="128" class="links"> 
+	  <?php if ( $nivel == 'fin' || 'adm') : ?><a href="clientes_ativar_desativar_aluno.php?id_aluno=<? echo "$x[id_aluno]" ?>&funcao=ativar">Ativar Este Aluno   </a>   <?php endif ; ?></td>
           <td width="180" class="links"><a href="financeiro_lista_Todos_boletos_cada_aluno.php?id_aluno=<? echo "$x[id_aluno]" ?>" target="_self">Status Financeiro</a></td>
           <td width="122" class="links">&nbsp;</td>
-          <td width="65" class="links">&nbsp;</td>
+	  <td width="65" class="links">&nbsp;</td>
+	<?php endif ; ?>
           <td width="103" align="right" class="links"><a href="clientes_excluir_registro.php?id_aluno=<? echo "$x[id_aluno]" ?>&confirm=nao">Excluir Definitivo</a></td>
         </tr>
       </table>        </td>

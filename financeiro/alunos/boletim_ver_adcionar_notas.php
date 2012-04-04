@@ -3,6 +3,8 @@ include "../includes/validacao_pagina_adm.php";
 include "../includes/conexao_bd.php";
 
 include '../includes/nome_aluno.inc.php' ;
+
+$codigo_aluno = $_GET['codigo_aluno'];
 ?>
 
 	  <?php  
@@ -33,24 +35,15 @@ include '../includes/nome_aluno.inc.php' ;
 
 	<?php include '../includes/cabecalho.inc.php' ; ?>
 	<div class = "row">
-		<div class = "span3">
+		<div class = "span2">
 
 		
 		<?php
-						if ($nivel == 'adm')
-				{
 				include "../includes/menu_lateral.php";
 				
-				}
-				else
-				{
-				//direciona para a página inicial dos usuários cadastrados
-				
-				include "menu_lateral_secretaria.php";
-				}
 ?> 
 	</div>
-	<div class = "span13" >
+	<div class = "span10" >
 
 	<h3><?php echo $nome['nome_completo'] ; ?></h3>	
 	<?php include '../includes/menu_aluno.inc.php' ; ?>
@@ -71,7 +64,8 @@ include '../includes/nome_aluno.inc.php' ;
 	<?php if($nivel == "adm") { ?> 
 		<form action = "registrar_boletim.php" method = "post">
 			<input type = "hidden" name ="id_aluno" value = '<?php echo $id_aluno; ?>'/>
-			<input type = "submit"  value = "Registrar boletim" />
+			<input type = "hidden" name ="codigo_aluno" value = '<?php echo $codigo_aluno; ?>'/>
+			<input type = "submit"  value = "Registrar boletim" class = "btn" />
 		</form>
 	<?php } else { ?>
 		<p>Somente o usuario adm, pode registrar boletim</p>
@@ -106,7 +100,7 @@ include '../includes/nome_aluno.inc.php' ;
 ?>
 
 
-			<table  >
+			<table  class = "table " >
 			
 	<?php if($nivel == "adm") { ?> 
 
@@ -119,16 +113,20 @@ include '../includes/nome_aluno.inc.php' ;
 
 				<?php  if  ( $valor['aproveitamento'] == false) :  ?>
 		
-					<a class = "btn success" href ="boletim_ver_adcionar_notas_Adicionar_Nota.php?materia=
+					<a class = "btn btn-success" href ="boletim_ver_adcionar_notas_Adicionar_Nota.php?materia=
 						<?php echo $valor['materia_id'];?>&id_aluno=<?php echo $id_aluno ;?>"> Adicionar nota</a>	
 				
 				
 				<?php endif ; ?>
 
-				<a class = "btn danger" href ="materia_confirma_deletar.php?materia=<?php echo $valor['materia_id'];?>
+				<a class = "btn btn-danger" href ="materia_confirma_deletar.php?materia=<?php echo $valor['materia_id'];?>
 									&nome_materia=<?php echo $valor['nome_materia']; ?>
 									&tipo_ensino=<?php echo $valor['tipo_ensino']; ?>
-									&id_aluno=<?php echo $id_aluno; ?> "> Deletar	</a>	
+									&id_aluno=<?php echo $id_aluno; ?> "> 
+									<i class = "icon-remove" ></i>
+									Deletar	
+				</a>	
+
 			</td>
 			</tr>
 
@@ -160,13 +158,6 @@ $nome_completo = mysql_fetch_assoc($nome_completo);
 
 <!--botão volta!-->
 
-<form action="clientes_busca_alunos.php" method = "post" > 
-<input type="hidden" name = "palavra" value="<?php echo $nome_completo['nome_completo'] ; ?>"/>
-<input type="hidden" name = "tipo_aluno" value="s"/>
-
-<input type="submit" value="Voltar" class = "btn"/>
-
-</form>
 
             </td>
         </tr>

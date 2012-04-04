@@ -1,29 +1,65 @@
-    <a href="alunos_checar_docs.php?id_aluno=<?php echo $id_aluno ; ?>&codigo_aluno=<?php echo $codigo_aluno ; ?>" title="Editar dados deste deste aluno"><img src="../imagens/docs.gif"></a>
+<table class = "table table-bordered" >  
+<tr>
+    <td >
+	 <a class = "btn" href="alunos_checar_docs.php?id_aluno=<?php echo $id_aluno ; ?>&codigo_aluno=<?php echo $codigo_aluno ; ?>" title="Editar dados deste deste aluno">
+				<i class="icon-file"></i>
+		 Documentos
+		</a>
+    </td>  
 
-    <a href="boletim_ver_adcionar_notas.php?id_aluno=<?php echo $id_aluno ; ?>&codigo_aluno=<?php echo $codigo_aluno ; ?>"><img src="../imagens/ico_boletim.gif" width="43" height="44" border="0" /></a>
+	 <td>
+			<a class = "btn" href="boletim_ver_adcionar_notas.php?id_aluno=<?php echo $id_aluno ; ?>&codigo_aluno=<?php echo $codigo_aluno ; ?>">
 
-	<?php if($nivel == "adm"): ?> 
-		<a href="../financeiro/financeiro_lista_Todos_boletos_cada_aluno.php?id_aluno=<?php echo $id_aluno ; ?>" title="Verifcar Status Financeiro deste Aluno">
-	<img src="../imagens/ico_status_financeiro.gif" width="60" height="44" border="0" /></a> 
-	<?php endif ; ?>
-	<a href="../../contrato_do_aluno.php?codigo_aluno=<?php echo $codigo_aluno ; ?>" target="_blank" title="Clique para gerar um contrato">
-	<img src="../imagens/ico_gerar_contrato.gif" width="49" height="44" border="0" /></a>
+				<i class="icon-book"></i>
+			Boletim
+			</a>
+	</td>
 
-	<a href="../documentos/index.php?codigo_aluno=<?php echo $codigo_aluno ?>" target="_blank">
-	<img src="../imagens/ico_requerimento.gif" width="73" height="42" border="0" /></a></td>
+	 <?php if($nivel != "atm" ) : ?> 
+			<td><a class = "btn" href="../financeiro/financeiro_lista_Todos_boletos_cada_aluno.php?id_aluno=<?php echo $id_aluno ?>" title="Verifcar Status Financeiro deste Aluno">
+    <i class="icon-folder-open"></i>
+	Financeiro</a>
 
-    <?php if($nivel == "adm") : ?> 
-		<a href="../financeiro/financeiro_form_criar_parcelas.php?id_aluno=<?php echo $id_aluno ; ?>" target="_self" title="Gerar cobranças para este aluno">
-			<img src="../imagens/ico_gerar_pagamento.gif" width="63" height="49" border="0" />
-		</a>  
-    <?php endif ; ?>
+	</td> <?php endif ; ?>
 
-	<a href="../alunos/clientes_editar_dados_aluno.php?id_aluno=<?php echo $id_aluno ; ?>" title="Editar dados deste deste aluno">
-	<img src="../imagens/ico_editar_dadis.gif" width="37" height="46" border="0" /></a></td>
+	 <td>
+		<a class = "btn" href="../documentos/contrato_do_aluno.php?codigo_aluno=<? echo $codigo_aluno ?>" target="_blank" title="Clique para gerar um contrato">
+						  <i class="icon-file"></i>
+			Contrato
 
-    <?php if($nivel == "adm") : ?> 
-	<a href="../alunos/clientes_ativar_desativar_aluno.php?id_aluno=<?php echo $id_aluno ; ?>&amp;funcao=desativar" title="Enviar aluno para a gaveta">
-		<img src="../imagens/ico_desativar_aluno.gif" width="64" height="48" border="0" />
+		</a>
+	</td>
+
+	 <td>
+			<a class = "btn"  href="../documentos/index.php?codigo_aluno=<? echo $codigo_aluno ?>" target="_blank">
+				<i class="icon-file"></i>
+				Requerimentos
+			
+				</a>
+	</td>
+
+    <?php if($nivel == "adm") { ?> 
+	<td>
+		<a class = "btn" href="../financeiro/financeiro_form_criar_parcelas.php?id_aluno=<? echo $id_aluno ?>" target="_self" title="Gerar cobranças para este aluno">
+				<i class="icon-file"></i>
+			Gerar Pagamento
+		</a> </td>  
+    <?php } ?>
+
+	 <td>
+			<a class = "btn" href="clientes_editar_dados_aluno.php?id_aluno=<? echo $id_aluno ?>&codigo_aluno=<?php echo $codigo_aluno ; ?>" title="Editar dados deste deste aluno">
+				<i class="icon-pencil"></i>
+				Editar
+			</a>
+	</td>
+
+    <td>
+	<a class = "btn btn-danger" href="clientes_ativar_desativar_aluno.php?id_aluno=<?php echo $id_aluno ?>&amp;funcao=desativar" title="Enviar aluno para a gaveta">
+				<i class="icon-remove"></i>
+				Desativar
 	</a>
-    <?php endif ; ?>
+	</td>
 
+  </tr>
+
+</table>
